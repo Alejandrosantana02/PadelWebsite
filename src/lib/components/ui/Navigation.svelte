@@ -19,6 +19,14 @@
 		}
 	}
 
+	// Smooth scroll function
+	function scrollToSection(sectionId: string) {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+
 	// Check if current page is active
 	let isActive = $derived((path: string) => $page.url.pathname === path || $page.url.pathname.startsWith(path + '/'));
 </script>
@@ -33,22 +41,22 @@
 				</svg>
 			</label>
 			<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-				<li><a href="/reviews" class:active={isActive('/reviews')}>Reviews</a></li>
-				<li><a href="/guides" class:active={isActive('/guides')}>Guides</a></li>
-				<li><a href="/compare" class:active={isActive('/compare')}>Comparisons</a></li>
-				<li><a href="/about" class:active={isActive('/about')}>About</a></li>
+				<li><a href="#reviews" onclick={() => scrollToSection('reviews')}>Reviews</a></li>
+				<li><a href="#guides" onclick={() => scrollToSection('guides')}>Guides</a></li>
+				<li><a href="#compare" onclick={() => scrollToSection('compare')}>Comparisons</a></li>
+				<li><a href="#about" onclick={() => scrollToSection('about')}>About</a></li>
 			</ul>
 		</div>
-		<a href="/" class="btn btn-ghost normal-case text-xl font-bold text-primary">
+		<a href="#home" class="btn btn-ghost normal-case text-xl font-bold text-primary" onclick={() => scrollToSection('home')}>
 			Padel Reviews
 		</a>
 	</div>
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal px-1">
-			<li><a href="/reviews" class="font-medium" class:active={isActive('/reviews')}>Reviews</a></li>
-			<li><a href="/guides" class="font-medium" class:active={isActive('/guides')}>Guides</a></li>
-			<li><a href="/compare" class="font-medium" class:active={isActive('/compare')}>Comparisons</a></li>
-			<li><a href="/about" class="font-medium" class:active={isActive('/about')}>About</a></li>
+			<li><a href="#reviews" class="font-medium" onclick={() => scrollToSection('reviews')}>Reviews</a></li>
+			<li><a href="#guides" class="font-medium" onclick={() => scrollToSection('guides')}>Guides</a></li>
+			<li><a href="#compare" class="font-medium" onclick={() => scrollToSection('compare')}>Comparisons</a></li>
+			<li><a href="#about" class="font-medium" onclick={() => scrollToSection('about')}>About</a></li>
 		</ul>
 	</div>
 	<div class="navbar-end">

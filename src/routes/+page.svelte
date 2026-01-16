@@ -7,6 +7,7 @@
 	import ProsConsList from '$lib/components/reviews/ProsConsList.svelte';
 	import SpecsTable from '$lib/components/reviews/SpecsTable.svelte';
 	import NewsletterForm from '$lib/components/forms/NewsletterForm.svelte';
+	import ContactForm from '$lib/components/forms/ContactForm.svelte';
 
 	// Sample data for demonstration
 	const sampleReviews: PaddleReview[] = [
@@ -61,146 +62,428 @@
 			content: '',
 			publishedAt: new Date('2024-01-20'),
 			excerpt: 'The Bullpadel Vertex 03 delivers maximum power for competitive players.'
+		},
+		{
+			id: 'adidas-metalbone-carbon',
+			title: 'Adidas Metalbone Carbon Paddle Review',
+			slug: 'adidas-metalbone-carbon',
+			brand: 'Adidas',
+			model: 'Metalbone Carbon',
+			shape: 'round',
+			weight: 355,
+			balance: 'balanced',
+			material: 'Carbon fiber',
+			evaFoamType: 'Soft EVA',
+			powerRating: 4,
+			controlRating: 4,
+			comfortRating: 5,
+			price: 199.99,
+			pros: ['Great comfort', 'Balanced performance', 'Affordable premium paddle'],
+			cons: ['Less power than diamond shapes', 'May feel slow to some players'],
+			affiliateLinks: {
+				padelusa: 'https://padelusa.com/adidas-metalbone-carbon',
+				amazon: 'https://amazon.com/dp/B08N1Q8Q9Z'
+			},
+			images: [],
+			content: '',
+			publishedAt: new Date('2024-01-25'),
+			excerpt: 'The Adidas Metalbone Carbon offers excellent comfort and balanced performance.'
 		}
 	];
+
+	const guides = [
+		{
+			title: 'Best Padel Paddles for Beginners',
+			excerpt: 'Find the perfect paddle to start your Padel journey with our comprehensive guide for beginners.',
+			content: `# Best Padel Paddles for Beginners
+
+Choosing your first Padel paddle can be overwhelming. This guide will help you find the perfect paddle to start your Padel journey.
+
+## Key Factors for Beginners
+
+### Comfort and Control
+Beginner paddles should prioritize comfort and control over power. Look for paddles with soft EVA foam and balanced weight distribution.
+
+### Budget-Friendly Options
+Don't invest in premium paddles until you're sure you'll stick with the sport. Start with paddles in the $100-200 range.
+
+### Weight and Balance
+Lighter paddles (350-370g) with balanced or handle-heavy balance are easier for beginners to control.
+
+## Recommended Beginner Paddles
+
+### 1. Nox AT10 Luxury
+- **Price**: $149
+- **Weight**: 365g
+- **Shape**: Round
+- **Best For**: Complete beginners
+
+### 2. Bullpadel Hack 03 Comfort
+- **Price**: $179
+- **Weight**: 360g
+- **Shape**: Teardrop
+- **Best For**: Those wanting some power
+
+## Conclusion
+
+Start with comfort and control, then upgrade as you improve. The most important thing is enjoying the game!`
+		},
+		{
+			title: 'Padel Paddle Shapes Explained',
+			excerpt: 'Understanding the different Padel paddle shapes and how they affect your game.',
+			content: `# Padel Paddle Shapes Explained
+
+Padel paddle shapes significantly impact how the paddle performs. Understanding the differences will help you choose the right paddle for your playing style.
+
+## The Three Main Shapes
+
+### Round Shape
+- **Characteristics**: Equal surface area, balanced control and power
+- **Best For**: All-around players, beginners
+- **Advantages**: Versatile, easier to control
+- **Disadvantages**: Less specialized performance
+
+### Teardrop Shape
+- **Characteristics**: More surface area in sweet spot, slightly more control
+- **Best For**: Intermediate players, control-oriented players
+- **Advantages**: Better control, larger sweet spot
+- **Disadvantages**: Slightly less power
+
+### Diamond Shape
+- **Characteristics**: Concentrated power in sweet spot, maximum power
+- **Best For**: Advanced players, aggressive players
+- **Advantages**: Maximum power, competitive edge
+- **Disadvantages**: Smaller sweet spot, harder to control
+
+## Choosing the Right Shape
+
+Consider your playing style:
+- **Defensive players**: Round or teardrop shapes
+- **Aggressive players**: Diamond shapes
+- **All-around players**: Round shapes
+
+## Conclusion
+
+Your paddle shape should match your playing style and skill level. Don't be afraid to try different shapes to find what works best for you.`
+		}
+	];
+
+	// Smooth scroll function
+	function scrollToSection(sectionId: string) {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 </script>
 
 <svelte:head>
-	<title>Padel Paddle Reviews - Expert Reviews & Guides</title>
-	<meta name="description" content="Find your perfect Padel paddle with expert reviews, comparisons, and buying guides. Trusted by players worldwide." />
+	<title>Padel Reviews - Expert Padel Paddle Reviews, Guides & Comparisons</title>
+	<meta name="description" content="Your complete Padel resource: expert paddle reviews, buying guides, comparisons, and everything you need to excel at Padel." />
 </svelte:head>
 
+<!-- Navigation Bar -->
+<nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+	<div class="navbar-start">
+		<a class="btn btn-ghost text-xl font-bold" href="#home" on:click={() => scrollToSection('home')}>🎾 Padel Reviews</a>
+	</div>
+	<div class="navbar-center hidden lg:flex">
+		<ul class="menu menu-horizontal px-1">
+			<li><a href="#home" on:click={() => scrollToSection('home')} class:active={false}>Home</a></li>
+			<li><a href="#reviews" on:click={() => scrollToSection('reviews')} class:active={false}>Reviews</a></li>
+			<li><a href="#guides" on:click={() => scrollToSection('guides')} class:active={false}>Guides</a></li>
+			<li><a href="#compare" on:click={() => scrollToSection('compare')} class:active={false}>Compare</a></li>
+			<li><a href="#about" on:click={() => scrollToSection('about')} class:active={false}>About</a></li>
+		</ul>
+	</div>
+	<div class="navbar-end">
+		<div class="dropdown dropdown-end lg:hidden">
+			<label tabindex="0" class="btn btn-ghost lg:hidden">
+				<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+				</svg>
+			</label>
+			<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+				<li><a href="#home" on:click={() => scrollToSection('home')}>Home</a></li>
+				<li><a href="#reviews" on:click={() => scrollToSection('reviews')}>Reviews</a></li>
+				<li><a href="#guides" on:click={() => scrollToSection('guides')}>Guides</a></li>
+				<li><a href="#compare" on:click={() => scrollToSection('compare')}>Compare</a></li>
+				<li><a href="#about" on:click={() => scrollToSection('about')}>About</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
 <!-- Hero Section -->
-<section class="hero min-h-[60vh] bg-gradient-to-r from-primary to-secondary">
-	<div class="hero-content text-center text-primary-content">
-		<div class="max-w-md">
-			<h1 class="text-5xl font-bold">Find Your Perfect Padel Paddle</h1>
-			<p class="py-6">
-				Expert reviews, detailed comparisons, and buying guides to help you choose the right paddle for your game.
+<section id="home" class="min-h-screen bg-gradient-to-br from-primary via-secondary to-accent flex items-center">
+	<div class="container mx-auto px-4 text-center text-primary-content">
+		<div class="max-w-4xl mx-auto">
+			<h1 class="text-6xl md:text-7xl font-bold mb-6 animate-fade-in">Find Your Perfect Padel Paddle</h1>
+			<p class="text-xl md:text-2xl mb-8 opacity-90">
+				Expert reviews, detailed comparisons, comprehensive guides, and everything you need to excel at Padel tennis.
 			</p>
-			<div class="flex gap-4 justify-center">
-				<a href="/reviews" class="btn btn-accent">Browse Reviews</a>
-				<a href="/guides" class="btn btn-outline btn-accent">View Guides</a>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<button class="btn btn-accent btn-lg" on:click={() => scrollToSection('reviews')}>
+					Browse Reviews
+				</button>
+				<button class="btn btn-outline btn-accent btn-lg" on:click={() => scrollToSection('guides')}>
+					Read Guides
+				</button>
 			</div>
 		</div>
 	</div>
 </section>
 
 <!-- Featured Reviews Section -->
-<section class="py-16 px-4">
+<section id="reviews" class="py-20 px-4 bg-base-100">
 	<div class="container mx-auto max-w-6xl">
-		<div class="text-center mb-12">
-			<h2 class="text-4xl font-bold mb-4">Featured Paddle Reviews</h2>
-			<p class="text-lg text-gray-600 max-w-2xl mx-auto">
-				Read our in-depth reviews of the most popular Padel paddles on the market.
+		<div class="text-center mb-16">
+			<h2 class="text-5xl font-bold mb-6">Expert Paddle Reviews</h2>
+			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+				In-depth reviews of the most popular Padel paddles with detailed specifications, performance analysis, and buying recommendations.
 			</p>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
 			{#each sampleReviews as review}
 				<PaddleReviewCard {review} />
 			{/each}
 		</div>
 
-		<div class="text-center">
-			<a href="/reviews" class="btn btn-primary btn-lg">View All Reviews</a>
+		<!-- Component Showcase -->
+		<div class="bg-gray-50 rounded-2xl p-8">
+			<h3 class="text-3xl font-bold text-center mb-8">Review Components</h3>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<div class="card bg-base-100 shadow-lg">
+					<div class="card-body text-center">
+						<h4 class="card-title text-lg">Rating System</h4>
+						<div class="space-y-2">
+							<div><span class="font-medium">Power:</span> <RatingStars rating={4} /></div>
+							<div><span class="font-medium">Control:</span> <RatingStars rating={5} /></div>
+							<div><span class="font-medium">Comfort:</span> <RatingStars rating={4} /></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card bg-base-100 shadow-lg">
+					<div class="card-body text-center">
+						<h4 class="card-title text-lg">Affiliate Links</h4>
+						<div class="space-y-2">
+							<AffiliateButton
+								padelusaLink="https://padelusa.com/example"
+								amazonLink="https://amazon.com/dp/example"
+								variant="dual"
+							/>
+						</div>
+					</div>
+				</div>
+
+				<div class="card bg-base-100 shadow-lg">
+					<div class="card-body text-center">
+						<h4 class="card-title text-lg">Pros & Cons</h4>
+						<ProsConsList
+							pros={['Excellent control', 'Comfortable grip']}
+							cons={['Higher price', 'May feel heavy']}
+							columns={false}
+						/>
+					</div>
+				</div>
+
+				<div class="card bg-base-100 shadow-lg">
+					<div class="card-body text-center">
+						<h4 class="card-title text-lg">Specifications</h4>
+						<SpecsTable specs={{
+							shape: 'teardrop',
+							weight: 365,
+							balance: 'balanced',
+							material: 'Carbon fiber'
+						}} />
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Component Showcase Section -->
-<section class="py-16 px-4 bg-gray-50">
+<!-- Guides Section -->
+<section id="guides" class="py-20 px-4 bg-gray-50">
 	<div class="container mx-auto max-w-6xl">
-		<h2 class="text-4xl font-bold text-center mb-12">Component Showcase</h2>
+		<div class="text-center mb-16">
+			<h2 class="text-5xl font-bold mb-6">Buyer's Guides</h2>
+			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+				Comprehensive guides to help you make informed decisions about Padel equipment, from choosing your first paddle to advanced techniques.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+			{#each guides as guide}
+				<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+					<div class="card-body">
+						<h3 class="card-title text-2xl mb-4">{guide.title}</h3>
+						<p class="text-gray-600 mb-6">{guide.excerpt}</p>
+						<div class="card-actions justify-between items-center">
+							<div class="badge badge-primary">Guide</div>
+							<span class="text-sm text-gray-500">5 min read</span>
+						</div>
+					</div>
+				</div>
+			{/each}
+		</div>
+
+		<!-- Guide Content Preview -->
+		<div class="bg-white rounded-2xl p-8 shadow-lg">
+			<h3 class="text-3xl font-bold mb-6">Paddle Shapes Explained</h3>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div class="text-center">
+					<div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-3xl">⚫</span>
+					</div>
+					<h4 class="text-xl font-bold mb-2">Round Shape</h4>
+					<p class="text-gray-600">Balanced control and power, perfect for all-around players and beginners.</p>
+				</div>
+				<div class="text-center">
+					<div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-3xl">🔺</span>
+					</div>
+					<h4 class="text-xl font-bold mb-2">Teardrop Shape</h4>
+					<p class="text-gray-600">Enhanced control with larger sweet spot, ideal for intermediate players.</p>
+				</div>
+				<div class="text-center">
+					<div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-3xl">💎</span>
+					</div>
+					<h4 class="text-xl font-bold mb-2">Diamond Shape</h4>
+					<p class="text-gray-600">Maximum power and spin, designed for advanced and competitive players.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Comparison Section -->
+<section id="compare" class="py-20 px-4 bg-base-100">
+	<div class="container mx-auto max-w-6xl">
+		<div class="text-center mb-16">
+			<h2 class="text-5xl font-bold mb-6">Paddle Comparisons</h2>
+			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+				Side-by-side comparisons to help you choose between similar paddles and find the best option for your playing style and budget.
+			</p>
+		</div>
+
+		<!-- Featured Comparison -->
+		<div class="card bg-base-100 shadow-2xl mb-12">
+			<div class="card-body">
+				<h3 class="card-title text-3xl mb-6">Nox ML10 Pro Carbon vs Bullpadel Vertex 03</h3>
+				<p class="text-lg mb-6">Compare two premium paddles with different playing characteristics - control-focused vs power-focused.</p>
+				<ComparisonTable
+					paddles={sampleReviews.slice(0, 2)}
+					columns={['name', 'price', 'rating', 'shape', 'weight', 'material', 'affiliate']}
+				/>
+			</div>
+		</div>
+
+		<!-- Comparison Tips -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div class="text-center">
+				<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+					<span class="text-2xl font-bold text-primary-content">🎯</span>
+				</div>
+				<h4 class="text-xl font-bold mb-2">Know Your Style</h4>
+				<p class="text-gray-600">Determine if you're a control player, power player, or somewhere in between.</p>
+			</div>
+			<div class="text-center">
+				<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+					<span class="text-2xl font-bold text-secondary-content">⚖️</span>
+				</div>
+				<h4 class="text-xl font-bold mb-2">Consider Your Level</h4>
+				<p class="text-gray-600">Beginner paddles prioritize comfort, while advanced paddles maximize performance.</p>
+			</div>
+			<div class="text-center">
+				<div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+					<span class="text-2xl font-bold text-accent-content">💰</span>
+				</div>
+				<h4 class="text-xl font-bold mb-2">Set Your Budget</h4>
+				<p class="text-gray-600">Quality paddles range from $100-$400+. Find the best value for your price range.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 px-4 bg-gradient-to-r from-neutral to-base-200 text-neutral-content">
+	<div class="container mx-auto max-w-6xl">
+		<div class="text-center mb-16">
+			<h2 class="text-5xl font-bold mb-6">About Padel Reviews</h2>
+			<p class="text-xl opacity-90 max-w-3xl mx-auto">
+				Your trusted source for honest, comprehensive Padel equipment reviews and expert guidance.
+			</p>
+		</div>
 
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-			<!-- Rating Stars -->
-			<div class="card bg-base-100 shadow-lg">
-				<div class="card-body">
-					<h3 class="card-title">Rating Stars Component</h3>
-					<div class="space-y-4">
-						<div>
-							<span class="font-medium">Power Rating:</span>
-							<RatingStars rating={4} label="Power" />
+			<div>
+				<h3 class="text-3xl font-bold mb-6">Our Mission</h3>
+				<p class="text-lg mb-6">
+					To provide Padel players with honest, comprehensive reviews and expert guidance to help them choose the best equipment for their game.
+				</p>
+
+				<div class="space-y-4">
+					<div class="flex items-start gap-4">
+						<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+							<span class="text-sm font-bold">✓</span>
 						</div>
 						<div>
-							<span class="font-medium">Control Rating:</span>
-							<RatingStars rating={5} label="Control" />
+							<h4 class="font-bold">Independent & Unbiased</h4>
+							<p class="opacity-80">Our recommendations are based solely on product quality and performance.</p>
+						</div>
+					</div>
+					<div class="flex items-start gap-4">
+						<div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+							<span class="text-sm font-bold">✓</span>
 						</div>
 						<div>
-							<span class="font-medium">Comfort Rating:</span>
-							<RatingStars rating={4} label="Comfort" />
+							<h4 class="font-bold">Data-Driven Insights</h4>
+							<p class="opacity-80">We combine detailed testing with user feedback for comprehensive analysis.</p>
+						</div>
+					</div>
+					<div class="flex items-start gap-4">
+						<div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+							<span class="text-sm font-bold">✓</span>
+						</div>
+						<div>
+							<h4 class="font-bold">Regular Updates</h4>
+							<p class="opacity-80">New paddles and equipment are regularly reviewed and added to our database.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- Affiliate Buttons -->
-			<div class="card bg-base-100 shadow-lg">
-				<div class="card-body">
-					<h3 class="card-title">Affiliate Buttons</h3>
-					<div class="space-y-4">
-						<AffiliateButton
-							padelusaLink="https://padelusa.com/example"
-							amazonLink="https://amazon.com/dp/example"
-							variant="dual"
-						/>
-						<AffiliateButton
-							padelusaLink="https://padelusa.com/example"
-							variant="single"
-						/>
-					</div>
-				</div>
-			</div>
-
-			<!-- Pros/Cons List -->
-			<div class="card bg-base-100 shadow-lg">
-				<div class="card-body">
-					<h3 class="card-title">Pros & Cons</h3>
-					<ProsConsList
-						pros={['Excellent control', 'Comfortable grip', 'Durable construction']}
-						cons={['Higher price point', 'May feel heavy']}
-						columns={false}
-					/>
-				</div>
-			</div>
-
-			<!-- Specs Table -->
-			<div class="card bg-base-100 shadow-lg">
-				<div class="card-body">
-					<h3 class="card-title">Specifications</h3>
-					<SpecsTable specs={{
-						shape: 'teardrop',
-						weight: 365,
-						balance: 'balanced',
-						material: 'Carbon fiber',
-						face: 'Fiberglass',
-						core: 'Soft EVA'
-					}} />
+			<div>
+				<h3 class="text-3xl font-bold mb-6">Get In Touch</h3>
+				<div class="bg-base-100 rounded-2xl p-8 text-base-content">
+					<ContactForm onSuccess={() => console.log('Message sent!')} />
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Comparison Table Section -->
-<section class="py-16 px-4">
-	<div class="container mx-auto max-w-6xl">
-		<h2 class="text-4xl font-bold text-center mb-12">Paddle Comparison</h2>
-		<ComparisonTable
-			paddles={sampleReviews}
-			columns={['name', 'price', 'rating', 'shape', 'weight', 'affiliate']}
-		/>
-	</div>
-</section>
-
-<!-- Newsletter Signup -->
-<section class="py-16 px-4 bg-primary text-primary-content">
+<!-- Newsletter & Footer -->
+<section class="py-20 px-4 bg-neutral text-neutral-content">
 	<div class="container mx-auto max-w-4xl text-center">
+		<h2 class="text-4xl font-bold mb-6">Stay Updated</h2>
+		<p class="text-xl mb-8 opacity-90">
+			Get the latest Padel reviews, equipment guides, and expert tips delivered to your inbox.
+		</p>
 		<NewsletterForm
 			variant="inline"
-			title="Stay Updated"
-			description="Get the latest Padel reviews and guides delivered to your inbox."
+			title=""
+			description=""
 		/>
+
+		<div class="mt-12 pt-8 border-t border-neutral-content border-opacity-20">
+			<p class="text-sm opacity-70">
+				© 2026 Padel Reviews. Your trusted source for Padel equipment guidance.
+			</p>
+		</div>
 	</div>
 </section>
