@@ -91,6 +91,87 @@
 			content: '',
 			publishedAt: new Date('2024-01-25'),
 			excerpt: 'The Adidas Metalbone Carbon offers excellent comfort and balanced performance.'
+		},
+		{
+			id: 'nox-at10-luxury',
+			title: 'Nox AT10 Luxury Paddle Review',
+			slug: 'nox-at10-luxury',
+			brand: 'Nox',
+			model: 'AT10 Luxury',
+			shape: 'round',
+			weight: 365,
+			balance: 'balanced',
+			material: 'Fiberglass',
+			evaFoamType: 'Soft EVA',
+			powerRating: 3,
+			controlRating: 4,
+			comfortRating: 5,
+			price: 149.99,
+			pros: ['Excellent comfort', 'Perfect for beginners', 'Very forgiving'],
+			cons: ['Less power', 'Entry-level materials'],
+			affiliateLinks: {
+				padelusa: 'https://padelusa.com/nox-at10-luxury',
+				amazon: 'https://amazon.com/dp/B08EXAMPLE1'
+			},
+			image: '/images/paddles/nox-at10-luxury-front.webp',
+			images: ['/images/paddles/nox-at10-luxury-front.webp'],
+			content: '',
+			publishedAt: new Date('2024-01-12'),
+			excerpt: 'The Nox AT10 Luxury is perfect for beginners seeking comfort and ease of use.'
+		},
+		{
+			id: 'bullpadel-hack-03-comfort',
+			title: 'Bullpadel Hack 03 Comfort Paddle Review',
+			slug: 'bullpadel-hack-03-comfort',
+			brand: 'Bullpadel',
+			model: 'Hack 03 Comfort',
+			shape: 'teardrop',
+			weight: 360,
+			balance: 'balanced',
+			material: 'Fiberglass',
+			evaFoamType: 'Soft EVA',
+			powerRating: 4,
+			controlRating: 4,
+			comfortRating: 5,
+			price: 179.99,
+			pros: ['Great comfort', 'Good power for beginners', 'Easy to use'],
+			cons: ['Entry-level construction', 'Less durable than premium models'],
+			affiliateLinks: {
+				padelusa: 'https://padelusa.com/bullpadel-hack-03-comfort',
+				amazon: 'https://amazon.com/dp/B08EXAMPLE2'
+			},
+			image: '/images/paddles/bullpadel-hack-03-comfort-front.webp',
+			images: ['/images/paddles/bullpadel-hack-03-comfort-front.webp'],
+			content: '',
+			publishedAt: new Date('2024-01-18'),
+			excerpt: 'The Bullpadel Hack 03 Comfort offers excellent comfort with some power for developing players.'
+		},
+		{
+			id: 'adidas-drive-response',
+			title: 'Adidas Drive Response Paddle Review',
+			slug: 'adidas-drive-response',
+			brand: 'Adidas',
+			model: 'Drive Response',
+			shape: 'round',
+			weight: 355,
+			balance: 'balanced',
+			material: 'Fiberglass',
+			evaFoamType: 'Medium EVA',
+			powerRating: 3,
+			controlRating: 4,
+			comfortRating: 4,
+			price: 129.99,
+			pros: ['Very affordable', 'Good for beginners', 'Comfortable'],
+			cons: ['Basic materials', 'Limited performance'],
+			affiliateLinks: {
+				padelusa: 'https://padelusa.com/adidas-drive-response',
+				amazon: 'https://amazon.com/dp/B08EXAMPLE3'
+			},
+			image: '/images/paddles/adidas-drive-response-front.webp',
+			images: ['/images/paddles/adidas-drive-response-front.webp'],
+			content: '',
+			publishedAt: new Date('2024-01-10'),
+			excerpt: 'The Adidas Drive Response is an affordable entry-level paddle perfect for beginners.'
 		}
 	];
 
@@ -207,6 +288,120 @@ An excellent choice for club players and those transitioning from recreational t
 					user: 'Carmen D.',
 					date: '2024-01-22',
 					review: 'Great paddle for the price. Very comfortable to play with and good all-around performance.'
+				}
+			]
+		},
+		'nox-at10-luxury': {
+			fullDescription: `The Nox AT10 Luxury is the perfect entry-level paddle for complete beginners. This round-shaped paddle combines comfort, control, and forgiveness in an affordable package designed specifically for players new to Padel.
+
+The AT10 Luxury features a soft EVA foam core that absorbs shock and provides excellent comfort during extended play sessions. The fiberglass construction keeps costs down while still delivering reliable performance. The round shape ensures maximum forgiveness on off-center hits, making it easier for beginners to get the ball over the net consistently.
+
+Perfect for players who want to focus on learning the game without being overwhelmed by advanced paddle technologies.`,
+			keyFeatures: [
+				'Soft EVA foam core for maximum comfort',
+				'Round shape for forgiveness on off-center hits',
+				'Fiberglass construction for affordability',
+				'Anatomical handle for better grip',
+				'Lightweight design (365g)',
+				'Entry-level pricing'
+			],
+			playingStyle: 'Beginners learning the fundamentals',
+			skillLevel: 'Beginner',
+			performanceData: {
+				power: 3,
+				control: 4,
+				comfort: 5,
+				durability: 4,
+				value: 5
+			},
+			userReviews: [
+				{
+					rating: 5,
+					user: 'Ana M.',
+					date: '2024-01-12',
+					review: 'Perfect paddle for a complete beginner like me! So comfortable and forgiving. I can actually enjoy learning the game.'
+				},
+				{
+					rating: 4,
+					user: 'Luis P.',
+					date: '2024-01-08',
+					review: 'Great starter paddle. Comfortable to play with and helps me focus on technique rather than power.'
+				}
+			]
+		},
+		'bullpadel-hack-03-comfort': {
+			fullDescription: `The Bullpadel Hack 03 Comfort bridges the gap between beginner and intermediate paddles. This teardrop-shaped paddle offers a good balance of comfort and power, making it ideal for players who have mastered the basics and want to add some pace to their game.
+
+Featuring soft EVA foam and fiberglass construction, the Hack 03 provides excellent comfort while delivering enough power to satisfy developing players. The teardrop shape offers a slightly extended sweet spot compared to round paddles, rewarding better technique while still being forgiving enough for regular players.
+
+An excellent choice for players transitioning from complete beginners to intermediate level.`,
+			keyFeatures: [
+				'Soft EVA foam for superior comfort',
+				'Teardrop shape with extended sweet spot',
+				'Fiberglass face for balanced performance',
+				'Comfort-oriented design',
+				'Lightweight at 360g',
+				'Affordable performance paddle'
+			],
+			playingStyle: 'Comfort-focused players wanting some power',
+			skillLevel: 'Beginner to Intermediate',
+			performanceData: {
+				power: 4,
+				control: 4,
+				comfort: 5,
+				durability: 4,
+				value: 4
+			},
+			userReviews: [
+				{
+					rating: 5,
+					user: 'Miguel T.',
+					date: '2024-01-18',
+					review: 'Perfect transition paddle! Comfortable like a beginner paddle but with enough power to improve my game.'
+				},
+				{
+					rating: 4,
+					user: 'Sofia R.',
+					date: '2024-01-15',
+					review: 'Great comfort and decent power. Helps me develop my technique while staying comfortable during long sessions.'
+				}
+			]
+		},
+		'adidas-drive-response': {
+			fullDescription: `The Adidas Drive Response is the most affordable entry point into Padel. This budget-friendly paddle is designed for complete beginners who want to try the sport without a significant financial commitment.
+
+Despite its low price point, the Drive Response doesn't skimp on comfort. The medium-density EVA foam provides good shock absorption, while the fiberglass construction ensures durability. The round shape maximizes forgiveness, making it easier for new players to succeed.
+
+Perfect for casual players, those testing the waters of Padel, or as a backup paddle for more experienced players.`,
+			keyFeatures: [
+				'Budget-friendly pricing',
+				'Medium EVA foam for comfort',
+				'Round shape for maximum forgiveness',
+				'Fiberglass construction',
+				'Lightweight design',
+				'Basic but functional'
+			],
+			playingStyle: 'Casual beginners on a budget',
+			skillLevel: 'Beginner',
+			performanceData: {
+				power: 3,
+				control: 4,
+				comfort: 4,
+				durability: 3,
+				value: 5
+			},
+			userReviews: [
+				{
+					rating: 4,
+					user: 'Pablo G.',
+					date: '2024-01-10',
+					review: 'Great budget paddle! Perfect for trying out Padel without spending a fortune. Comfortable and forgiving.'
+				},
+				{
+					rating: 3,
+					user: 'Elena V.',
+					date: '2024-01-05',
+					review: 'Decent for the price. Good for beginners, but expect to upgrade as you improve.'
 				}
 			]
 		}
