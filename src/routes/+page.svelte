@@ -32,8 +32,8 @@
 				padelusa: 'https://padelusa.com/nox-ml10-pro-carbon',
 				amazon: 'https://amazon.com/dp/B08N1Q8Q9Z'
 			},
-			image: '/images/paddles/nox-ml10-pro-carbon-front.webp',
-			images: ['/images/paddles/nox-ml10-pro-carbon-front.webp'],
+			image: '/images/paddles/nox-ml10-pro-carbon-front.jpg',
+			images: ['/images/paddles/nox-ml10-pro-carbon-front.jpg'],
 			content: '',
 			publishedAt: new Date('2024-01-15'),
 			excerpt: 'The Nox ML10 Pro Carbon offers exceptional control and comfort for intermediate players.'
@@ -59,8 +59,8 @@
 				padelusa: 'https://padelusa.com/bullpadel-vertex-03',
 				amazon: 'https://amazon.com/dp/B08N1Q8Q9Z'
 			},
-			image: '/images/paddles/bullpadel-vertex-03-front.webp',
-			images: ['/images/paddles/bullpadel-vertex-03-front.webp'],
+			image: '/images/paddles/bullpadel-vertex-03-front.jpg',
+			images: ['/images/paddles/bullpadel-vertex-03-front.jpg'],
 			content: '',
 			publishedAt: new Date('2024-01-20'),
 			excerpt: 'The Bullpadel Vertex 03 delivers maximum power for competitive players.'
@@ -86,8 +86,8 @@
 				padelusa: 'https://padelusa.com/adidas-metalbone-carbon',
 				amazon: 'https://amazon.com/dp/B08N1Q8Q9Z'
 			},
-			image: '/images/paddles/adidas-metalbone-carbon.webp',
-			images: ['/images/paddles/adidas-metalbone-carbon.webp'],
+			image: '/images/paddles/adidas-metalbone-carbon.jpg',
+			images: ['/images/paddles/adidas-metalbone-carbon.jpg'],
 			content: '',
 			publishedAt: new Date('2024-01-25'),
 			excerpt: 'The Adidas Metalbone Carbon offers excellent comfort and balanced performance.'
