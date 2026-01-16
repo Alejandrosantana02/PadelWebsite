@@ -12,8 +12,6 @@
 </svelte:head>
 
 <div data-theme="padel" class="min-h-screen flex flex-col">
-	<Navigation />
-
 	<main class="flex-1">
 		{@render children()}
 	</main>

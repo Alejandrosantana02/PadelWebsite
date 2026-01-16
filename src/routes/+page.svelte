@@ -183,33 +183,105 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 </svelte:head>
 
 <!-- Navigation Bar -->
-<nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+<nav class="navbar bg-base-100/95 backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-base-200">
 	<div class="navbar-start">
-		<a class="btn btn-ghost text-xl font-bold" href="#home" on:click={() => scrollToSection('home')}>🎾 Padel Reviews</a>
+		<a class="btn btn-ghost text-xl font-bold text-primary hover:bg-primary/10 transition-colors" onclick={() => scrollToSection('home')}>
+			🎾 Padel Reviews
+		</a>
 	</div>
 	<div class="navbar-center hidden lg:flex">
-		<ul class="menu menu-horizontal px-1">
-			<li><a href="#home" on:click={() => scrollToSection('home')} class:active={false}>Home</a></li>
-			<li><a href="#reviews" on:click={() => scrollToSection('reviews')} class:active={false}>Reviews</a></li>
-			<li><a href="#guides" on:click={() => scrollToSection('guides')} class:active={false}>Guides</a></li>
-			<li><a href="#compare" on:click={() => scrollToSection('compare')} class:active={false}>Compare</a></li>
-			<li><a href="#about" on:click={() => scrollToSection('about')} class:active={false}>About</a></li>
+		<ul class="menu menu-horizontal px-1 gap-2">
+			<li>
+				<a
+					class="btn btn-ghost hover:btn-primary transition-all duration-200 font-medium"
+					onclick={() => scrollToSection('home')}
+				>
+					Home
+				</a>
+			</li>
+			<li>
+				<a
+					class="btn btn-ghost hover:btn-primary transition-all duration-200 font-medium"
+					onclick={() => scrollToSection('reviews')}
+				>
+					Reviews
+				</a>
+			</li>
+			<li>
+				<a
+					class="btn btn-ghost hover:btn-primary transition-all duration-200 font-medium"
+					onclick={() => scrollToSection('guides')}
+				>
+					Guides
+				</a>
+			</li>
+			<li>
+				<a
+					class="btn btn-ghost hover:btn-primary transition-all duration-200 font-medium"
+					onclick={() => scrollToSection('compare')}
+				>
+					Compare
+				</a>
+			</li>
+			<li>
+				<a
+					class="btn btn-ghost hover:btn-primary transition-all duration-200 font-medium"
+					onclick={() => scrollToSection('about')}
+				>
+					About
+				</a>
+			</li>
 		</ul>
 	</div>
 	<div class="navbar-end">
 		<div class="dropdown dropdown-end lg:hidden">
-			<label tabindex="0" class="btn btn-ghost lg:hidden">
+			<label tabindex="0" class="btn btn-ghost lg:hidden hover:bg-base-200 transition-colors">
 				<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
 				</svg>
 			</label>
-			<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-				<li><a href="#home" on:click={() => scrollToSection('home')}>Home</a></li>
-				<li><a href="#reviews" on:click={() => scrollToSection('reviews')}>Reviews</a></li>
-				<li><a href="#guides" on:click={() => scrollToSection('guides')}>Guides</a></li>
-				<li><a href="#compare" on:click={() => scrollToSection('compare')}>Compare</a></li>
-				<li><a href="#about" on:click={() => scrollToSection('about')}>About</a></li>
+			<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-base-100 rounded-box w-52 border border-base-200">
+				<li>
+					<a class="hover:bg-primary/10 transition-colors" onclick={() => scrollToSection('home')}>
+						Home
+					</a>
+				</li>
+				<li>
+					<a class="hover:bg-primary/10 transition-colors" onclick={() => scrollToSection('reviews')}>
+						Reviews
+					</a>
+				</li>
+				<li>
+					<a class="hover:bg-primary/10 transition-colors" onclick={() => scrollToSection('guides')}>
+						Guides
+					</a>
+				</li>
+				<li>
+					<a class="hover:bg-primary/10 transition-colors" onclick={() => scrollToSection('compare')}>
+						Compare
+					</a>
+				</li>
+				<li>
+					<a class="hover:bg-primary/10 transition-colors" onclick={() => scrollToSection('about')}>
+						About
+					</a>
+				</li>
 			</ul>
+		</div>
+		<!-- Search functionality could be added here in the future -->
+		<div class="hidden md:flex form-control">
+			<div class="input-group">
+				<input
+					type="text"
+					placeholder="Search paddles..."
+					class="input input-bordered input-sm w-32 lg:w-48 focus:input-primary transition-colors"
+				/>
+				<button class="btn btn-square btn-sm btn-primary">
+					<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+					</svg>
+				</button>
+			</div>
 		</div>
 	</div>
 </nav>
@@ -223,10 +295,10 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 				Expert reviews, detailed comparisons, comprehensive guides, and everything you need to excel at Padel tennis.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<button class="btn btn-accent btn-lg" on:click={() => scrollToSection('reviews')}>
+				<button class="btn btn-accent btn-lg" onclick={() => scrollToSection('reviews')}>
 					Browse Reviews
 				</button>
-				<button class="btn btn-outline btn-accent btn-lg" on:click={() => scrollToSection('guides')}>
+				<button class="btn btn-outline btn-accent btn-lg" onclick={() => scrollToSection('guides')}>
 					Read Guides
 				</button>
 			</div>
