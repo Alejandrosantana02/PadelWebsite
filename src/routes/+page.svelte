@@ -168,6 +168,14 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 		}
 	];
 
+	// Calculate average rating for each review
+	function getAverageRating(review: typeof sampleReviews[0]): number {
+		if (review.powerRating && review.controlRating && review.comfortRating) {
+			return Math.round(((review.powerRating + review.controlRating + review.comfortRating) / 3) * 10) / 10;
+		}
+		return 0;
+	}
+
 	// Smooth scroll function
 	function scrollToSection(sectionId: string) {
 		const element = document.getElementById(sectionId);
@@ -322,57 +330,100 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 			{/each}
 		</div>
 
-		<!-- Component Showcase -->
-		<div class="bg-gray-50 rounded-2xl p-8">
-			<h3 class="text-3xl font-bold text-center mb-8">Review Components</h3>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-				<div class="card bg-base-100 shadow-lg">
-					<div class="card-body text-center">
-						<h4 class="card-title text-lg">Rating System</h4>
-						<div class="space-y-2">
-							<div><span class="font-medium">Power:</span> <RatingStars rating={4} /></div>
-							<div><span class="font-medium">Control:</span> <RatingStars rating={5} /></div>
-							<div><span class="font-medium">Comfort:</span> <RatingStars rating={4} /></div>
+		<!-- Detailed Paddle Reviews -->
+		<div class="space-y-12">
+			{#each sampleReviews as review, index}
+				<div class="bg-white rounded-2xl p-8 shadow-lg border border-base-200">
+					<div class="flex items-start justify-between mb-6">
+						<div>
+							<h3 class="text-3xl font-bold mb-2">{review.brand} {review.model}</h3>
+							<div class="flex items-center gap-4 text-sm text-gray-600">
+								<span class="badge badge-primary">{review.shape} shape</span>
+								<span class="badge badge-secondary">{review.weight}g</span>
+								<span class="badge badge-accent">{review.material}</span>
+								<span class="text-lg font-bold text-primary">${review.price}</span>
+							</div>
+						</div>
+						{#if getAverageRating(review) > 0}
+							<div class="text-right">
+								<div class="text-2xl font-bold mb-1">{getAverageRating(review)}/5</div>
+								<RatingStars rating={getAverageRating(review)} size="md" showValue={false} />
+							</div>
+						{/if}
+					</div>
+
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+						<!-- Specifications -->
+						<div>
+							<h4 class="text-xl font-bold mb-4">Specifications</h4>
+							<SpecsTable specs={{
+								shape: review.shape,
+								weight: review.weight,
+								balance: review.balance,
+								material: review.material,
+								face: 'Fiberglass',
+								core: review.evaFoamType
+							}} />
+						</div>
+
+						<!-- Detailed Ratings -->
+						<div>
+							<h4 class="text-xl font-bold mb-4">Performance Ratings</h4>
+							<div class="space-y-4">
+								<div class="flex justify-between items-center">
+									<span class="font-medium">Power Rating:</span>
+									<div class="flex items-center gap-2">
+										<RatingStars rating={review.powerRating} size="sm" showValue={false} />
+										<span class="text-sm font-bold">{review.powerRating}/5</span>
+									</div>
+								</div>
+								<div class="flex justify-between items-center">
+									<span class="font-medium">Control Rating:</span>
+									<div class="flex items-center gap-2">
+										<RatingStars rating={review.controlRating} size="sm" showValue={false} />
+										<span class="text-sm font-bold">{review.controlRating}/5</span>
+									</div>
+								</div>
+								<div class="flex justify-between items-center">
+									<span class="font-medium">Comfort Rating:</span>
+									<div class="flex items-center gap-2">
+										<RatingStars rating={review.comfortRating} size="sm" showValue={false} />
+										<span class="text-sm font-bold">{review.comfortRating}/5</span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="card bg-base-100 shadow-lg">
-					<div class="card-body text-center">
-						<h4 class="card-title text-lg">Affiliate Links</h4>
-						<div class="space-y-2">
+					<!-- Pros and Cons -->
+					<div class="mb-8">
+						<h4 class="text-xl font-bold mb-4">Pros & Cons</h4>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+							<ProsConsList
+								pros={review.pros}
+								cons={review.cons}
+								columns={true}
+							/>
+						</div>
+					</div>
+
+					<!-- Affiliate Links -->
+					<div class="border-t border-base-200 pt-6">
+						<h4 class="text-xl font-bold mb-4">Where to Buy</h4>
+						<div class="flex flex-col sm:flex-row gap-4">
 							<AffiliateButton
-								padelusaLink="https://padelusa.com/example"
-								amazonLink="https://amazon.com/dp/example"
+								padelusaLink={review.affiliateLinks.padelusa}
+								amazonLink={review.affiliateLinks.amazon}
 								variant="dual"
 							/>
 						</div>
 					</div>
-				</div>
 
-				<div class="card bg-base-100 shadow-lg">
-					<div class="card-body text-center">
-						<h4 class="card-title text-lg">Pros & Cons</h4>
-						<ProsConsList
-							pros={['Excellent control', 'Comfortable grip']}
-							cons={['Higher price', 'May feel heavy']}
-							columns={false}
-						/>
-					</div>
+					{#if index < sampleReviews.length - 1}
+						<div class="divider my-8"></div>
+					{/if}
 				</div>
-
-				<div class="card bg-base-100 shadow-lg">
-					<div class="card-body text-center">
-						<h4 class="card-title text-lg">Specifications</h4>
-						<SpecsTable specs={{
-							shape: 'teardrop',
-							weight: 365,
-							balance: 'balanced',
-							material: 'Carbon fiber'
-						}} />
-					</div>
-				</div>
-			</div>
+			{/each}
 		</div>
 	</div>
 </section>
