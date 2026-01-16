@@ -1,0 +1,315 @@
+Great — adding **PadelUSA.com** and **Amazon.com** as your primary affiliate partners strengthens the business plan because you now have both:
+
+- A **specialized retailer** with high‑quality Padel gear (PadelUSA)  
+- A **mass‑market retailer** with high conversion rates (Amazon)
+
+Below is an updated, polished version of your **Business Requirements Document (BRD)** and **Technical Specification (Tech Spec)** that explicitly incorporates both affiliate programs.
+
+---
+
+# 📘 **Business Requirements Document (BRD)**  
+### **Project: Padel Paddle Reviews & Padel Education Website**  
+### **Affiliate Partners: PadelUSA.com + Amazon.com**
+
+---
+
+## 🎯 1. Project Overview
+Build a niche content website focused on:
+- Padel paddle reviews  
+- Gear comparisons  
+- Technique guides  
+- Buyer’s guides  
+- Brand breakdowns  
+
+Revenue streams:
+- **Affiliate marketing** via:
+  - **PadelUSA.com** (primary high‑ticket partner)
+  - **Amazon.com** (broad product availability + high conversion)
+- **Google AdSense / programmatic ads**
+
+The site aims to become the most trusted English‑language resource for Padel gear.
+
+---
+
+## 🧩 2. Business Objectives
+- Rank for high‑intent Padel gear keywords.
+- Build trust through expert‑style reviews and structured comparisons.
+- Monetize through affiliate links to PadelUSA and Amazon.
+- Reach 20,000+ monthly organic visitors within 12–18 months.
+- Establish a recognizable brand in the Padel gear niche.
+
+---
+
+## 👥 3. Target Audience
+- New Padel players  
+- Intermediate players upgrading gear  
+- Competitive players  
+- Tennis players transitioning to Padel  
+- Coaches and clubs  
+
+Pain points:
+- Confusion about paddle shapes, materials, and balance  
+- Difficulty choosing the right paddle for their level  
+- Lack of unbiased reviews  
+- Wanting to avoid overpriced or low‑quality gear  
+
+---
+
+## 📝 4. Core Content Categories
+
+### **A. Padel Paddle Reviews**
+- Control paddles  
+- Power paddles  
+- Hybrid paddles  
+- Beginner paddles  
+- Advanced carbon paddles  
+- Brand‑specific reviews (Nox, Bullpadel, Adidas, Head, etc.)
+
+### **B. Padel Gear Reviews**
+- Balls  
+- Shoes  
+- Bags  
+- Grips & overgrips  
+- Accessories  
+
+### **C. Buyer’s Guides**
+- Best paddles for beginners  
+- Best paddles for elbow comfort  
+- Best power paddles  
+- Best control paddles  
+- Best paddles under $100 / $200 / $300  
+
+### **D. Educational Content**
+- Paddle shapes explained  
+- EVA foam types  
+- Carbon vs fiberglass  
+- How to choose a paddle  
+- How to maintain your paddle  
+- Padel rules & scoring  
+
+### **E. Comparison Content**
+- Paddle A vs Paddle B  
+- Brand comparisons  
+- Material comparisons  
+
+---
+
+## 💰 5. Monetization Requirements
+
+### **Affiliate Marketing**
+**PadelUSA.com**
+- High‑ticket paddles ($150–$400+)  
+- Premium brands  
+- Strong commissions  
+- Reliable stock availability  
+
+**Amazon.com**
+- Wide product selection  
+- Fast shipping  
+- High conversion rate  
+- Accessories (balls, grips, bags, shoes)
+
+Affiliate link placement:
+- In‑content buttons  
+- Comparison tables  
+- “Check Price at PadelUSA” + “Check Price on Amazon” dual‑CTA  
+- Sidebar recommended products  
+
+### **Ad Revenue**
+- Google AdSense  
+- Ezoic or Mediavine (later)
+
+Ad placements:
+- In‑content  
+- Sidebar  
+- Header  
+- Sticky mobile footer  
+
+---
+
+## 📈 6. SEO Requirements
+- Keyword research for every article  
+- Structured H1/H2/H3  
+- Internal linking  
+- Review schema markup  
+- Fast load times  
+- Mobile‑first design  
+- Backlink strategy (Padel clubs, sports blogs, guest posts)
+
+---
+
+## 🧪 7. Functional Requirements
+- Search bar with autocomplete  
+- Category filters (shape, weight, material, price)  
+- Comparison tables  
+- Editor rating system  
+- Affiliate link tracking  
+- Email newsletter signup  
+- Contact form  
+- About page  
+
+---
+
+## 🎨 8. UX/UI Requirements
+- Clean, sporty, modern design  
+- Padel‑themed accents  
+- Sticky navigation  
+- Fast‑loading images  
+- Mobile‑optimized layout  
+- Clear dual‑CTA buttons (“Check Price at PadelUSA” / “Check Price on Amazon”)  
+
+---
+
+## 📊 9. KPIs
+- Organic traffic  
+- Affiliate CTR  
+- Affiliate conversion rate  
+- Ad RPM  
+- Time on page  
+- Bounce rate  
+
+---
+
+# 🛠️ **Technical Specification (Tech Spec)**  
+### **Affiliate Partners: PadelUSA.com + Amazon.com**
+
+---
+
+## 🧱 1. Tech Stack
+
+### **Frontend**
+- HTML5, CSS3, JavaScript  
+- TailwindCSS or Bootstrap  
+
+### **Backend / CMS**
+- WordPress  
+- PHP 8+  
+- MySQL  
+
+### **Hosting**
+- SiteGround, WPX, or Cloudways  
+- CDN: Cloudflare  
+
+---
+
+## 🔌 2. Required Plugins / Integrations
+
+### **SEO**
+- RankMath or Yoast  
+- Schema Pro  
+
+### **Performance**
+- WP Rocket or LiteSpeed Cache  
+- ShortPixel or Imagify  
+
+### **Affiliate**
+- ThirstyAffiliates or Lasso  
+- Amazon Associates integration  
+- Custom link templates for PadelUSA  
+
+### **Analytics**
+- Google Analytics 4  
+- Google Search Console  
+
+### **Ads**
+- Google AdSense  
+- Ezoic (optional later)
+
+---
+
+## 🧰 3. Core Features (Technical Requirements)
+
+### **A. Paddle Review System**
+Custom post type: **“Paddle Reviews”**
+
+Custom fields:
+- Shape (round, teardrop, diamond)  
+- Weight  
+- Balance  
+- Material  
+- EVA foam type  
+- Power rating  
+- Control rating  
+- Comfort rating  
+- Price  
+- Pros/cons  
+- **Affiliate links for PadelUSA + Amazon**  
+- Dual‑CTA button support  
+
+### **B. Comparison Tables**
+- Auto‑generated using ACF fields  
+- Sortable columns (price, weight, power, control)  
+- Dual‑affiliate buttons in each row  
+
+### **C. Category Filters**
+Filter by:
+- Shape  
+- Material  
+- Price  
+- Skill level  
+- Weight  
+
+### **D. Gear Database**
+Custom post type: **“Padel Gear”**
+
+Fields:
+- Gear type  
+- Brand  
+- Price  
+- Features  
+- Pros/cons  
+- Affiliate links (PadelUSA + Amazon)
+
+---
+
+## 🔐 4. Security Requirements
+- SSL  
+- Daily backups  
+- Firewall  
+- Limit login attempts  
+
+---
+
+## ⚙️ 5. Performance Requirements
+- Page load under 2 seconds  
+- Lazy loading  
+- Minified CSS/JS  
+- WebP image support  
+
+---
+
+## 🧪 6. Testing Requirements
+- Cross‑browser testing  
+- Mobile responsiveness  
+- Affiliate link tracking  
+- Schema validation  
+- Core Web Vitals  
+
+---
+
+## 🚀 7. Deployment Plan
+1. Set up hosting + domain  
+2. Install WordPress + theme  
+3. Configure plugins  
+4. Build homepage + category pages  
+5. Upload first 10–15 articles  
+6. Submit sitemap  
+7. Begin link‑building  
+
+---
+
+## 📚 8. Documentation
+- Content style guide  
+- Affiliate link management guide  
+- SEO checklist  
+- Publishing workflow  
+
+---
+
+If you want, I can also create:
+- A **site architecture / sitemap**  
+- Your **first 20 article ideas**  
+- A **brand name + domain name list**  
+- A **content calendar**  
+
+Just tell me what you want to build next.
