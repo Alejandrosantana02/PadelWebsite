@@ -387,45 +387,217 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 			</p>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-			{#each guides as guide}
-				<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
-					<div class="card-body">
-						<h3 class="card-title text-2xl mb-4">{guide.title}</h3>
-						<p class="text-gray-600 mb-6">{guide.excerpt}</p>
-						<div class="card-actions justify-between items-center">
-							<div class="badge badge-primary">Guide</div>
-							<span class="text-sm text-gray-500">5 min read</span>
+		<!-- Best Paddles for Beginners Guide -->
+		<div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
+			<div class="flex items-center gap-4 mb-6">
+				<div class="badge badge-primary badge-lg">Beginner Guide</div>
+				<span class="text-sm text-gray-500">5 min read</span>
+			</div>
+			<h3 class="text-4xl font-bold mb-6">Best Padel Paddles for Beginners</h3>
+			<p class="text-lg text-gray-600 mb-8">{guides[0].excerpt}</p>
+
+			<div class="prose prose-lg max-w-none">
+				<h4 class="text-2xl font-bold mb-4">Key Factors for Beginners</h4>
+				<h5 class="text-xl font-semibold mb-2">Comfort and Control</h5>
+				<p class="mb-4">Beginner paddles should prioritize comfort and control over power. Look for paddles with soft EVA foam and balanced weight distribution.</p>
+
+				<h5 class="text-xl font-semibold mb-2">Budget-Friendly Options</h5>
+				<p class="mb-4">Don't invest in premium paddles until you're sure you'll stick with the sport. Start with paddles in the $100-200 range.</p>
+
+				<h5 class="text-xl font-semibold mb-2">Weight and Balance</h5>
+				<p class="mb-6">Lighter paddles (350-370g) with balanced or handle-heavy balance are easier for beginners to control.</p>
+
+				<h4 class="text-2xl font-bold mb-4">Recommended Beginner Paddles</h4>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+					<div class="card bg-base-100 border border-base-200">
+						<div class="card-body">
+							<h5 class="card-title text-xl">Nox AT10 Luxury</h5>
+							<div class="space-y-2 text-sm">
+								<p><strong>Price:</strong> $149</p>
+								<p><strong>Weight:</strong> 365g</p>
+								<p><strong>Shape:</strong> Round</p>
+								<p><strong>Best For:</strong> Complete beginners</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card bg-base-100 border border-base-200">
+						<div class="card-body">
+							<h5 class="card-title text-xl">Bullpadel Hack 03 Comfort</h5>
+							<div class="space-y-2 text-sm">
+								<p><strong>Price:</strong> $179</p>
+								<p><strong>Weight:</strong> 360g</p>
+								<p><strong>Shape:</strong> Teardrop</p>
+								<p><strong>Best For:</strong> Those wanting some power</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			{/each}
+
+				<div class="alert alert-info">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+					</svg>
+					<div>
+						<h5 class="font-bold">Pro Tip</h5>
+						<p>Start with comfort and control, then upgrade as you improve. The most important thing is enjoying the game!</p>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<!-- Guide Content Preview -->
-		<div class="bg-white rounded-2xl p-8 shadow-lg">
-			<h3 class="text-3xl font-bold mb-6">Paddle Shapes Explained</h3>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="text-center">
-					<div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-						<span class="text-3xl">⚫</span>
+		<!-- Paddle Shapes Guide -->
+		<div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
+			<div class="flex items-center gap-4 mb-6">
+				<div class="badge badge-secondary badge-lg">Shapes Guide</div>
+				<span class="text-sm text-gray-500">4 min read</span>
+			</div>
+			<h3 class="text-4xl font-bold mb-6">Padel Paddle Shapes Explained</h3>
+			<p class="text-lg text-gray-600 mb-8">{guides[1].excerpt}</p>
+
+			<div class="prose prose-lg max-w-none">
+				<h4 class="text-2xl font-bold mb-6">The Three Main Shapes</h4>
+
+				<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+					<div class="card bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200">
+						<div class="card-body text-center">
+							<div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+								<span class="text-3xl text-white">⚫</span>
+							</div>
+							<h4 class="card-title text-2xl mb-4">Round Shape</h4>
+							<h5 class="font-semibold mb-2">Characteristics:</h5>
+							<p class="text-sm mb-4">Equal surface area, balanced control and power</p>
+							<h5 class="font-semibold mb-2">Best For:</h5>
+							<p class="text-sm mb-4">All-around players, beginners</p>
+							<h5 class="font-semibold mb-2">Advantages:</h5>
+							<ul class="text-sm text-left list-disc list-inside">
+								<li>Versatile performance</li>
+								<li>Easier to control</li>
+								<li>Forgiving for mistakes</li>
+							</ul>
+						</div>
 					</div>
-					<h4 class="text-xl font-bold mb-2">Round Shape</h4>
-					<p class="text-gray-600">Balanced control and power, perfect for all-around players and beginners.</p>
+
+					<div class="card bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200">
+						<div class="card-body text-center">
+							<div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+								<span class="text-3xl text-white">🔺</span>
+							</div>
+							<h4 class="card-title text-2xl mb-4">Teardrop Shape</h4>
+							<h5 class="font-semibold mb-2">Characteristics:</h5>
+							<p class="text-sm mb-4">More surface area in sweet spot, slightly more control</p>
+							<h5 class="font-semibold mb-2">Best For:</h5>
+							<p class="text-sm mb-4">Intermediate players, control-oriented players</p>
+							<h5 class="font-semibold mb-2">Advantages:</h5>
+							<ul class="text-sm text-left list-disc list-inside">
+								<li>Better control</li>
+								<li>Larger sweet spot</li>
+								<li>More forgiving</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="card bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200">
+						<div class="card-body text-center">
+							<div class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+								<span class="text-3xl text-white">💎</span>
+							</div>
+							<h4 class="card-title text-2xl mb-4">Diamond Shape</h4>
+							<h5 class="font-semibold mb-2">Characteristics:</h5>
+							<p class="text-sm mb-4">Concentrated power in sweet spot, maximum power</p>
+							<h5 class="font-semibold mb-2">Best For:</h5>
+							<p class="text-sm mb-4">Advanced players, aggressive players</p>
+							<h5 class="font-semibold mb-2">Advantages:</h5>
+							<ul class="text-sm text-left list-disc list-inside">
+								<li>Maximum power</li>
+								<li>Competitive edge</li>
+								<li>More spin potential</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<div class="text-center">
-					<div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-						<span class="text-3xl">🔺</span>
+
+				<h4 class="text-2xl font-bold mb-4">Choosing the Right Shape</h4>
+				<div class="bg-gray-50 rounded-lg p-6">
+					<h5 class="text-xl font-semibold mb-4">Consider your playing style:</h5>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div>
+							<h6 class="font-bold text-green-600 mb-2">🛡️ Defensive Players</h6>
+							<ul class="list-disc list-inside text-sm space-y-1">
+								<li>Round or teardrop shapes</li>
+								<li>Focus on control and consistency</li>
+								<li>More forgiving on off-center hits</li>
+							</ul>
+						</div>
+						<div>
+							<h6 class="font-bold text-red-600 mb-2">⚡ Aggressive Players</h6>
+							<ul class="list-disc list-inside text-sm space-y-1">
+								<li>Diamond shapes</li>
+								<li>Maximum power and spin</li>
+								<li>Requires good technique</li>
+							</ul>
+						</div>
+						<div>
+							<h6 class="font-bold text-blue-600 mb-2">🎯 All-Around Players</h6>
+							<ul class="list-disc list-inside text-sm space-y-1">
+								<li>Round shapes</li>
+								<li>Balanced performance</li>
+								<li>Versatile in different situations</li>
+							</ul>
+						</div>
+						<div>
+							<h6 class="font-bold text-purple-600 mb-2">🔄 Improving Players</h6>
+							<ul class="list-disc list-inside text-sm space-y-1">
+								<li>Start with round, progress to teardrop</li>
+								<li>Focus on consistency first</li>
+								<li>Power comes with experience</li>
+							</ul>
+						</div>
 					</div>
-					<h4 class="text-xl font-bold mb-2">Teardrop Shape</h4>
-					<p class="text-gray-600">Enhanced control with larger sweet spot, ideal for intermediate players.</p>
 				</div>
-				<div class="text-center">
-					<div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-						<span class="text-3xl">💎</span>
+
+				<div class="alert alert-success mt-6">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+					</svg>
+					<div>
+						<h5 class="font-bold">Remember</h5>
+						<p>Your paddle shape should match your playing style and skill level. Don't be afraid to try different shapes to find what works best for you!</p>
 					</div>
-					<h4 class="text-xl font-bold mb-2">Diamond Shape</h4>
-					<p class="text-gray-600">Maximum power and spin, designed for advanced and competitive players.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Quick Tips Section -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<div class="card bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
+				<div class="card-body text-center">
+					<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-xl">💰</span>
+					</div>
+					<h4 class="card-title text-lg">Budget Guide</h4>
+					<p class="text-sm">Quality paddles range from $100-$400. Start affordable and upgrade as you improve.</p>
+				</div>
+			</div>
+
+			<div class="card bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/20">
+				<div class="card-body text-center">
+					<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-xl">⚖️</span>
+					</div>
+					<h4 class="card-title text-lg">Weight Matters</h4>
+					<p class="text-sm">Lighter paddles (350-370g) for beginners, heavier (370-390g) for advanced players.</p>
+				</div>
+			</div>
+
+			<div class="card bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20">
+				<div class="card-body text-center">
+					<div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-xl">🎯</span>
+					</div>
+					<h4 class="card-title text-lg">Try Before Buying</h4>
+					<p class="text-sm">Visit a Padel club to try different paddles before making a purchase.</p>
 				</div>
 			</div>
 		</div>
