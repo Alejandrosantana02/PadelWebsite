@@ -91,6 +91,124 @@
 		}
 	];
 
+	// Detailed paddle information
+	const paddleDetails = {
+		'nox-ml10-pro-carbon': {
+			fullDescription: `The Nox ML10 Pro Carbon is a premium control-oriented paddle that delivers exceptional precision and comfort. Designed for intermediate to advanced players who prioritize control over raw power, this paddle features advanced carbon fiber construction and a soft EVA core that provides outstanding touch and feel.
+
+The ML10's teardrop shape offers an extended sweet spot, making it forgiving on off-center hits while maintaining excellent maneuverability. The 16K carbon fiber face provides optimal stiffness for control without sacrificing comfort.
+
+Perfect for players who want to dictate the pace of the game through precise shot placement rather than overwhelming power.`,
+			keyFeatures: [
+				'16K Carbon Fiber face for optimal control',
+				'Soft EVA foam core for superior comfort',
+				'Teardrop shape with extended sweet spot',
+				'Fiberglass backing for enhanced durability',
+				'Anti-vibration system for reduced shock',
+				'Anatomical handle for better grip'
+			],
+			playingStyle: 'Control-oriented players who prefer precision over power',
+			skillLevel: 'Intermediate to Advanced',
+			performanceData: {
+				power: 4,
+				control: 5,
+				comfort: 5,
+				durability: 5,
+				value: 4
+			},
+			userReviews: [
+				{
+					rating: 5,
+					user: 'Carlos M.',
+					date: '2024-01-15',
+					review: 'This paddle has transformed my game. The control is incredible, and I can place shots exactly where I want them. Worth every penny!'
+				},
+				{
+					rating: 4,
+					user: 'Maria L.',
+					date: '2024-01-10',
+					review: 'Great control and comfort. Perfect for my playing style. Only wish it had a bit more power for certain shots.'
+				}
+			]
+		},
+		'bullpadel-vertex-03': {
+			fullDescription: `The Bullpadel Vertex 03 is a professional-grade power paddle designed for competitive players who demand maximum performance. This diamond-shaped weapon features TriCarbon technology and X5 core for explosive power and spin.
+
+The Vertex 03 is built for players who want to dominate rallies with powerful shots and aggressive play. The diamond shape concentrates power in the sweet spot, while the carbon fiber construction provides the stiffness needed for competitive play.
+
+Ideal for tournament players and those who want to take their game to the next level with raw power and precision.`,
+			keyFeatures: [
+				'TriCarbon face technology for maximum power',
+				'X5 core for enhanced spin and control',
+				'Diamond shape for concentrated power',
+				'CarbonFlex face for optimal flex',
+				'Vortex system for better aerodynamics',
+				'Professional-grade construction'
+			],
+			playingStyle: 'Aggressive players who want maximum power',
+			skillLevel: 'Advanced to Professional',
+			performanceData: {
+				power: 5,
+				control: 4,
+				comfort: 4,
+				durability: 5,
+				value: 4
+			},
+			userReviews: [
+				{
+					rating: 5,
+					user: 'Antonio R.',
+					date: '2024-01-20',
+					review: 'Unbelievable power! This paddle gives me the edge in tournaments. The spin generation is incredible.'
+				},
+				{
+					rating: 5,
+					user: 'Isabel G.',
+					date: '2024-01-18',
+					review: 'Professional quality paddle. The power is exactly what I needed to compete at a higher level.'
+				}
+			]
+		},
+		'adidas-metalbone-carbon': {
+			fullDescription: `The Adidas Metalbone Carbon offers premium performance at an accessible price point. This round-shaped paddle combines structural carbon with a soft EVA core to deliver balanced performance across all areas of the game.
+
+Perfect for players looking for a high-quality paddle that doesn't break the bank, the Metalbone Carbon provides excellent comfort, good control, and sufficient power for most playing situations. The round shape ensures versatility and forgiveness.
+
+An excellent choice for club players and those transitioning from recreational to competitive play.`,
+			keyFeatures: [
+				'Structural Carbon face for balanced performance',
+				'Soft EVA core for comfort and control',
+				'Round shape for versatility',
+				'Carbon tubing for lightweight strength',
+				'Metalbone technology for enhanced power',
+				'EVA Soft rubber for superior grip'
+			],
+			playingStyle: 'All-around players seeking balanced performance',
+			skillLevel: 'Beginner to Intermediate',
+			performanceData: {
+				power: 4,
+				control: 4,
+				comfort: 5,
+				durability: 4,
+				value: 5
+			},
+			userReviews: [
+				{
+					rating: 5,
+					user: 'Roberto S.',
+					date: '2024-01-25',
+					review: 'Excellent value for money! Comfortable, good control, and performs well in all situations. Highly recommended.'
+				},
+				{
+					rating: 4,
+					user: 'Carmen D.',
+					date: '2024-01-22',
+					review: 'Great paddle for the price. Very comfortable to play with and good all-around performance.'
+				}
+			]
+		}
+	};
+
 	const guides = [
 		{
 			title: 'Best Padel Paddles for Beginners',
@@ -175,6 +293,34 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 		}
 		return 0;
 	}
+
+	// State for expanded paddle details
+	let expandedPaddle = $state<string | null>(null);
+
+	// Toggle expanded view for a paddle
+	function togglePaddleDetails(paddleId: string) {
+		expandedPaddle = expandedPaddle === paddleId ? null : paddleId;
+		// Scroll to the paddle card after a short delay to allow for expansion
+		setTimeout(() => {
+			const element = document.getElementById(`paddle-${paddleId}`);
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		}, 100);
+	}
+
+	// Listen for paddle detail toggle events from components
+	$effect(() => {
+		const handleToggle = (event: CustomEvent) => {
+			togglePaddleDetails(event.detail.paddleId);
+		};
+
+		window.addEventListener('togglePaddleDetails', handleToggle as EventListener);
+
+		return () => {
+			window.removeEventListener('togglePaddleDetails', handleToggle as EventListener);
+		};
+	});
 
 	// Smooth scroll function
 	function scrollToSection(sectionId: string) {
@@ -333,7 +479,7 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 		<!-- Detailed Paddle Reviews -->
 		<div class="space-y-12">
 			{#each sampleReviews as review, index}
-				<div class="bg-white rounded-2xl p-8 shadow-lg border border-base-200">
+				<div id="paddle-{review.id}" class="bg-white rounded-2xl p-8 shadow-lg border border-base-200">
 					<div class="flex items-start justify-between mb-6">
 						<div>
 							<h3 class="text-3xl font-bold mb-2">{review.brand} {review.model}</h3>
@@ -344,53 +490,43 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 								<span class="text-lg font-bold text-primary">${review.price}</span>
 							</div>
 						</div>
-						{#if getAverageRating(review) > 0}
-							<div class="text-right">
-								<div class="text-2xl font-bold mb-1">{getAverageRating(review)}/5</div>
-								<RatingStars rating={getAverageRating(review)} size="md" showValue={false} />
-							</div>
-						{/if}
+						<div class="flex flex-col items-end gap-2">
+							{#if getAverageRating(review) > 0}
+								<div class="text-right">
+									<div class="text-2xl font-bold mb-1">{getAverageRating(review)}/5</div>
+									<RatingStars rating={getAverageRating(review)} size="md" showValue={false} />
+								</div>
+							{/if}
+							<button
+								class="btn btn-outline btn-sm"
+								onclick={() => togglePaddleDetails(review.id)}
+							>
+								{expandedPaddle === review.id ? 'Hide Details' : 'View Details'}
+							</button>
+						</div>
 					</div>
 
-					<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-						<!-- Specifications -->
-						<div>
-							<h4 class="text-xl font-bold mb-4">Specifications</h4>
-							<SpecsTable specs={{
-								shape: review.shape,
-								weight: review.weight,
-								balance: review.balance,
-								material: review.material,
-								face: 'Fiberglass',
-								core: review.evaFoamType
-							}} />
+					<!-- Quick Specs Overview -->
+					<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+						<div class="stat bg-base-100 rounded-lg">
+							<div class="stat-title">Power</div>
+							<div class="stat-value text-2xl">{review.powerRating}/5</div>
+							<div class="stat-desc">
+								<RatingStars rating={review.powerRating} size="sm" showValue={false} />
+							</div>
 						</div>
-
-						<!-- Detailed Ratings -->
-						<div>
-							<h4 class="text-xl font-bold mb-4">Performance Ratings</h4>
-							<div class="space-y-4">
-								<div class="flex justify-between items-center">
-									<span class="font-medium">Power Rating:</span>
-									<div class="flex items-center gap-2">
-										<RatingStars rating={review.powerRating} size="sm" showValue={false} />
-										<span class="text-sm font-bold">{review.powerRating}/5</span>
-									</div>
-								</div>
-								<div class="flex justify-between items-center">
-									<span class="font-medium">Control Rating:</span>
-									<div class="flex items-center gap-2">
-										<RatingStars rating={review.controlRating} size="sm" showValue={false} />
-										<span class="text-sm font-bold">{review.controlRating}/5</span>
-									</div>
-								</div>
-								<div class="flex justify-between items-center">
-									<span class="font-medium">Comfort Rating:</span>
-									<div class="flex items-center gap-2">
-										<RatingStars rating={review.comfortRating} size="sm" showValue={false} />
-										<span class="text-sm font-bold">{review.comfortRating}/5</span>
-									</div>
-								</div>
+						<div class="stat bg-base-100 rounded-lg">
+							<div class="stat-title">Control</div>
+							<div class="stat-value text-2xl">{review.controlRating}/5</div>
+							<div class="stat-desc">
+								<RatingStars rating={review.controlRating} size="sm" showValue={false} />
+							</div>
+						</div>
+						<div class="stat bg-base-100 rounded-lg">
+							<div class="stat-title">Comfort</div>
+							<div class="stat-value text-2xl">{review.comfortRating}/5</div>
+							<div class="stat-desc">
+								<RatingStars rating={review.comfortRating} size="sm" showValue={false} />
 							</div>
 						</div>
 					</div>
@@ -418,6 +554,85 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 							/>
 						</div>
 					</div>
+
+					<!-- Expanded Detailed View -->
+					{#if expandedPaddle === review.id}
+						<div class="mt-8 pt-8 border-t border-base-200">
+							<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+								<!-- Detailed Description -->
+								<div class="xl:col-span-2">
+									<h4 class="text-2xl font-bold mb-4">Detailed Review</h4>
+									<div class="prose prose-lg max-w-none mb-6">
+										<p class="text-gray-700 leading-relaxed">{paddleDetails[review.id].fullDescription}</p>
+									</div>
+
+									<!-- Key Features -->
+									<h5 class="text-xl font-bold mb-4">Key Features</h5>
+									<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+										{#each paddleDetails[review.id].keyFeatures as feature}
+											<div class="flex items-center gap-2">
+												<span class="text-green-500">✓</span>
+												<span class="text-sm">{feature}</span>
+											</div>
+										{/each}
+									</div>
+
+									<!-- Performance Data -->
+									<h5 class="text-xl font-bold mb-4">Performance Breakdown</h5>
+									<div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+										{#each Object.entries(paddleDetails[review.id].performanceData) as [key, value]}
+											<div class="text-center">
+												<div class="text-2xl font-bold text-primary">{value}/5</div>
+												<div class="text-sm text-gray-600 capitalize">{key}</div>
+											</div>
+										{/each}
+									</div>
+
+									<!-- Playing Style & Skill Level -->
+									<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+										<div class="bg-blue-50 p-4 rounded-lg">
+											<h6 class="font-bold text-blue-800 mb-2">Best For</h6>
+											<p class="text-blue-700 text-sm">{paddleDetails[review.id].playingStyle}</p>
+										</div>
+										<div class="bg-green-50 p-4 rounded-lg">
+											<h6 class="font-bold text-green-800 mb-2">Skill Level</h6>
+											<p class="text-green-700 text-sm">{paddleDetails[review.id].skillLevel}</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- User Reviews -->
+								<div>
+									<h4 class="text-xl font-bold mb-4">User Reviews</h4>
+									<div class="space-y-4">
+										{#each paddleDetails[review.id].userReviews as userReview}
+											<div class="bg-gray-50 p-4 rounded-lg">
+												<div class="flex items-center justify-between mb-2">
+													<span class="font-semibold">{userReview.user}</span>
+													<RatingStars rating={userReview.rating} size="sm" showValue={false} />
+												</div>
+												<p class="text-sm text-gray-600 mb-2">{userReview.review}</p>
+												<span class="text-xs text-gray-500">{new Date(userReview.date).toLocaleDateString()}</span>
+											</div>
+										{/each}
+									</div>
+
+									<!-- Specifications Sidebar -->
+									<div class="mt-6">
+										<h5 class="text-lg font-bold mb-4">Complete Specifications</h5>
+										<SpecsTable specs={{
+											shape: review.shape,
+											weight: review.weight,
+											balance: review.balance,
+											material: review.material,
+											face: 'Fiberglass',
+											core: review.evaFoamType
+										}} />
+									</div>
+								</div>
+							</div>
+						</div>
+					{/if}
 
 					{#if index < sampleReviews.length - 1}
 						<div class="divider my-8"></div>

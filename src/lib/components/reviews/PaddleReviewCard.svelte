@@ -78,11 +78,10 @@
 			<button
 				class="btn btn-outline btn-sm"
 				onclick={() => {
-					// Scroll to reviews section for more details
-					const reviewsSection = document.getElementById('reviews');
-					if (reviewsSection) {
-						reviewsSection.scrollIntoView({ behavior: 'smooth' });
-					}
+					// Dispatch custom event to toggle paddle details
+					window.dispatchEvent(new CustomEvent('togglePaddleDetails', {
+						detail: { paddleId: review.id }
+					}));
 				}}
 			>
 				View Details
