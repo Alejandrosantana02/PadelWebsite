@@ -56,9 +56,17 @@
 			<h3 class="mt-2 text-sm font-medium text-gray-900">No products found</h3>
 			<p class="mt-1 text-sm text-gray-500">{emptyMessage}</p>
 			<div class="mt-6">
-				<a href="/reviews" class="btn btn-primary">
+				<button
+					class="btn btn-primary"
+					onclick={() => {
+						const reviewsSection = document.getElementById('reviews');
+						if (reviewsSection) {
+							reviewsSection.scrollIntoView({ behavior: 'smooth' });
+						}
+					}}
+				>
 					View All Reviews
-				</a>
+				</button>
 			</div>
 		</div>
 	{:else}

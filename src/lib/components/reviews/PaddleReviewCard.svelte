@@ -75,9 +75,18 @@
 		{/if}
 
 		<div class="card-actions justify-end mt-4">
-			<a href="/reviews/{review.slug}" class="btn btn-outline btn-sm">
-				View Review
-			</a>
+			<button
+				class="btn btn-outline btn-sm"
+				onclick={() => {
+					// Scroll to reviews section for more details
+					const reviewsSection = document.getElementById('reviews');
+					if (reviewsSection) {
+						reviewsSection.scrollIntoView({ behavior: 'smooth' });
+					}
+				}}
+			>
+				View Details
+			</button>
 		</div>
 
 		{#if review.affiliateLinks}

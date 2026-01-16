@@ -1,21 +1,29 @@
 <script lang="ts">
 	let { children } = $props();
+
+	// Smooth scroll function
+	function scrollToSection(sectionId: string) {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 </script>
 
 <!-- Footer component -->
 <footer class="footer p-10 bg-neutral text-neutral-content">
 	<div>
 		<span class="footer-title">Services</span>
-		<a href="/reviews" class="link link-hover">Paddle Reviews</a>
-		<a href="/guides" class="link link-hover">Buyer's Guides</a>
-		<a href="/compare" class="link link-hover">Comparisons</a>
-		<a href="/about" class="link link-hover">About Us</a>
+		<button class="link link-hover text-left" onclick={() => scrollToSection('reviews')}>Paddle Reviews</button>
+		<button class="link link-hover text-left" onclick={() => scrollToSection('guides')}>Buyer's Guides</button>
+		<button class="link link-hover text-left" onclick={() => scrollToSection('compare')}>Comparisons</button>
+		<button class="link link-hover text-left" onclick={() => scrollToSection('about')}>About Us</button>
 	</div>
 	<div>
 		<span class="footer-title">Company</span>
-		<a href="/contact" class="link link-hover">Contact</a>
-		<a href="/privacy" class="link link-hover">Privacy Policy</a>
-		<a href="/disclosure" class="link link-hover">Affiliate Disclosure</a>
+		<button class="link link-hover text-left" onclick={() => scrollToSection('about')}>Contact</button>
+		<button class="link link-hover text-left opacity-50 cursor-not-allowed">Privacy Policy</button>
+		<button class="link link-hover text-left" onclick={() => scrollToSection('about')}>Affiliate Disclosure</button>
 	</div>
 	<div>
 		<span class="footer-title">Newsletter</span>
@@ -34,7 +42,7 @@
 		<div class="text-sm opacity-75">
 			<p class="mb-2">
 				<strong>Affiliate Disclosure:</strong> We may earn commissions from purchases made through affiliate links.
-				<a href="/disclosure" class="link link-hover">Learn more</a>
+				<button class="link link-hover" onclick={() => scrollToSection('about')}>Learn more</button>
 			</p>
 			<p>&copy; 2024 Padel Reviews. All rights reserved.</p>
 		</div>
