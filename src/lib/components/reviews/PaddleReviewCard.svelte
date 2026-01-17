@@ -39,6 +39,10 @@
 				alt={`${review.brand} ${review.model} paddle`}
 				class="rounded-xl h-48 w-full object-cover"
 				loading="lazy"
+				decoding="async"
+				width="400"
+				height="192"
+				fetchpriority="low"
 			/>
 		</figure>
 	{/if}
