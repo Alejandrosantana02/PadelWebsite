@@ -470,14 +470,14 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 </svelte:head>
 
 <!-- Navigation Bar -->
-<nav class="navbar bg-base-100/95 backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-base-200">
+<nav class="navbar bg-base-100/95 backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-base-200 px-2 sm:px-4">
 	<div class="navbar-start">
-		<a class="btn btn-ghost text-xl font-bold text-primary hover:bg-primary/10 transition-colors" onclick={() => scrollToSection('home')}>
-			🎾 Padel Reviews
+		<a class="btn btn-ghost text-base sm:text-lg lg:text-xl font-bold text-primary hover:bg-primary/10 transition-colors min-h-[44px]" onclick={() => scrollToSection('home')}>
+			<span class="hidden sm:inline">🎾 </span>Padel Reviews
 		</a>
 	</div>
 	<div class="navbar-center hidden lg:flex">
-		<ul class="menu menu-horizontal px-1 gap-2">
+		<ul class="menu menu-horizontal px-1 gap-1 sm:gap-2">
 			<li>
 				<a
 					class="btn btn-ghost hover:btn-primary transition-all duration-200 font-medium"
@@ -560,17 +560,19 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 
 <!-- Hero Section -->
 <section id="home" class="min-h-screen bg-gradient-to-br from-primary via-secondary to-accent flex items-center">
-	<div class="container mx-auto px-4 text-center text-primary-content">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-primary-content">
 		<div class="max-w-4xl mx-auto">
-			<h1 class="text-6xl md:text-7xl font-bold mb-6 animate-fade-in">Find Your Perfect Padel Paddle</h1>
-			<p class="text-xl md:text-2xl mb-8 opacity-90">
+			<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 animate-fade-in leading-tight">
+				Find Your Perfect Padel Paddle
+			</h1>
+			<p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 opacity-90 px-2">
 				Expert reviews, detailed comparisons, comprehensive guides, and everything you need to excel at Padel tennis.
 			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<button class="btn btn-accent btn-lg" onclick={() => scrollToSection('reviews')}>
+			<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+				<button class="btn btn-accent btn-lg min-h-[48px] text-base sm:text-lg" onclick={() => scrollToSection('reviews')}>
 					Browse Reviews
 				</button>
-				<button class="btn btn-outline btn-accent btn-lg" onclick={() => scrollToSection('guides')}>
+				<button class="btn btn-outline btn-accent btn-lg min-h-[48px] text-base sm:text-lg" onclick={() => scrollToSection('guides')}>
 					Read Guides
 				</button>
 			</div>
@@ -579,16 +581,16 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 </section>
 
 <!-- Featured Reviews Section -->
-<section id="reviews" class="py-20 px-4 bg-base-100">
+<section id="reviews" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-base-100">
 	<div class="container mx-auto max-w-6xl">
-		<div class="text-center mb-16">
-			<h2 class="text-5xl font-bold mb-6">Expert Paddle Reviews</h2>
-			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+		<div class="text-center mb-8 sm:mb-12 lg:mb-16">
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Expert Paddle Reviews</h2>
+			<p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-2">
 				In-depth reviews of the most popular Padel paddles with detailed specifications, performance analysis, and buying recommendations.
 			</p>
 		</div>
 
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
 			{#each sampleReviews as review}
 				<PaddleReviewCard {review} />
 			{/each}
@@ -597,26 +599,26 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 		<!-- Detailed Paddle Reviews -->
 		<div class="space-y-12">
 			{#each sampleReviews as review, index}
-				<div id="paddle-{review.id}" class="bg-white rounded-2xl p-8 shadow-lg border border-base-200">
-					<div class="flex items-start justify-between mb-6">
-						<div>
-							<h3 class="text-3xl font-bold mb-2">{review.brand} {review.model}</h3>
-							<div class="flex items-center gap-4 text-sm text-gray-600">
-								<span class="badge badge-primary">{review.shape} shape</span>
-								<span class="badge badge-secondary">{review.weight}g</span>
-								<span class="badge badge-accent">{review.material}</span>
-								<span class="text-lg font-bold text-primary">${review.price}</span>
+				<div id="paddle-{review.id}" class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-base-200">
+					<div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4 sm:mb-6">
+						<div class="flex-1">
+							<h3 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{review.brand} {review.model}</h3>
+							<div class="flex flex-wrap items-center gap-2 sm:gap-3 lg:gap-4 text-xs sm:text-sm text-gray-600">
+								<span class="badge badge-primary badge-sm sm:badge-md">{review.shape} shape</span>
+								<span class="badge badge-secondary badge-sm sm:badge-md">{review.weight}g</span>
+								<span class="badge badge-accent badge-sm sm:badge-md">{review.material}</span>
+								<span class="text-base sm:text-lg font-bold text-primary">${review.price}</span>
 							</div>
 						</div>
-						<div class="flex flex-col items-end gap-2">
+						<div class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-3 sm:gap-2">
 							{#if getAverageRating(review) > 0}
-								<div class="text-right">
-									<div class="text-2xl font-bold mb-1">{getAverageRating(review)}/5</div>
+								<div class="text-left sm:text-right">
+									<div class="text-xl sm:text-2xl font-bold mb-1">{getAverageRating(review)}/5</div>
 									<RatingStars rating={getAverageRating(review)} size="md" showValue={false} />
 								</div>
 							{/if}
 							<button
-								class="btn btn-outline btn-sm"
+								class="btn btn-outline btn-sm sm:btn-md min-h-[44px] text-xs sm:text-sm"
 								onclick={() => togglePaddleDetails(review.id)}
 							>
 								{expandedPaddle === review.id ? 'Hide Details' : 'View Details'}
@@ -625,7 +627,7 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 					</div>
 
 					<!-- Quick Specs Overview -->
-					<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+					<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
 						<div class="stat bg-base-100 rounded-lg">
 							<div class="stat-title">Power</div>
 							<div class="stat-value text-2xl">{review.powerRating}/5</div>
@@ -650,9 +652,9 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 					</div>
 
 					<!-- Pros and Cons -->
-					<div class="mb-8">
-						<h4 class="text-xl font-bold mb-4">Pros & Cons</h4>
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="mb-6 sm:mb-8">
+						<h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Pros & Cons</h4>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
 							<ProsConsList
 								pros={review.pros}
 								cons={review.cons}
@@ -662,9 +664,9 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 					</div>
 
 					<!-- Affiliate Links -->
-					<div class="border-t border-base-200 pt-6">
-						<h4 class="text-xl font-bold mb-4">Where to Buy</h4>
-						<div class="flex flex-col sm:flex-row gap-4">
+					<div class="border-t border-base-200 pt-4 sm:pt-6">
+						<h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Where to Buy</h4>
+						<div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
 							<AffiliateButton
 								padelusaLink={review.affiliateLinks.padelusa}
 								amazonLink={review.affiliateLinks.amazon}
@@ -675,69 +677,69 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 
 					<!-- Expanded Detailed View -->
 					{#if expandedPaddle === review.id}
-						<div class="mt-8 pt-8 border-t border-base-200">
-							<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+						<div class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-base-200">
+							<div class="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8">
 								<!-- Detailed Description -->
 								<div class="xl:col-span-2">
-									<h4 class="text-2xl font-bold mb-4">Detailed Review</h4>
-									<div class="prose prose-lg max-w-none mb-6">
-										<p class="text-gray-700 leading-relaxed">{paddleDetails[review.id].fullDescription}</p>
+									<h4 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Detailed Review</h4>
+									<div class="prose prose-sm sm:prose-lg max-w-none mb-4 sm:mb-6">
+										<p class="text-sm sm:text-base text-gray-700 leading-relaxed">{paddleDetails[review.id].fullDescription}</p>
 									</div>
 
 									<!-- Key Features -->
-									<h5 class="text-xl font-bold mb-4">Key Features</h5>
-									<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+									<h5 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Key Features</h5>
+									<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
 										{#each paddleDetails[review.id].keyFeatures as feature}
-											<div class="flex items-center gap-2">
-												<span class="text-green-500">✓</span>
-												<span class="text-sm">{feature}</span>
+											<div class="flex items-start gap-2">
+												<span class="text-green-500 text-sm sm:text-base mt-0.5">✓</span>
+												<span class="text-xs sm:text-sm">{feature}</span>
 											</div>
 										{/each}
 									</div>
 
 									<!-- Performance Data -->
-									<h5 class="text-xl font-bold mb-4">Performance Breakdown</h5>
-									<div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+									<h5 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Performance Breakdown</h5>
+									<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-4 sm:mb-6">
 										{#each Object.entries(paddleDetails[review.id].performanceData) as [key, value]}
-											<div class="text-center">
-												<div class="text-2xl font-bold text-primary">{value}/5</div>
-												<div class="text-sm text-gray-600 capitalize">{key}</div>
+											<div class="text-center p-2 sm:p-3 bg-base-50 rounded-lg">
+												<div class="text-xl sm:text-2xl font-bold text-primary">{value}/5</div>
+												<div class="text-xs sm:text-sm text-gray-600 capitalize mt-1">{key}</div>
 											</div>
 										{/each}
 									</div>
 
 									<!-- Playing Style & Skill Level -->
-									<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-										<div class="bg-blue-50 p-4 rounded-lg">
-											<h6 class="font-bold text-blue-800 mb-2">Best For</h6>
-											<p class="text-blue-700 text-sm">{paddleDetails[review.id].playingStyle}</p>
+									<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+										<div class="bg-blue-50 p-3 sm:p-4 rounded-lg">
+											<h6 class="font-bold text-blue-800 mb-2 text-sm sm:text-base">Best For</h6>
+											<p class="text-blue-700 text-xs sm:text-sm">{paddleDetails[review.id].playingStyle}</p>
 										</div>
-										<div class="bg-green-50 p-4 rounded-lg">
-											<h6 class="font-bold text-green-800 mb-2">Skill Level</h6>
-											<p class="text-green-700 text-sm">{paddleDetails[review.id].skillLevel}</p>
+										<div class="bg-green-50 p-3 sm:p-4 rounded-lg">
+											<h6 class="font-bold text-green-800 mb-2 text-sm sm:text-base">Skill Level</h6>
+											<p class="text-green-700 text-xs sm:text-sm">{paddleDetails[review.id].skillLevel}</p>
 										</div>
 									</div>
 								</div>
 
 								<!-- User Reviews -->
 								<div>
-									<h4 class="text-xl font-bold mb-4">User Reviews</h4>
-									<div class="space-y-4">
+									<h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">User Reviews</h4>
+									<div class="space-y-3 sm:space-y-4">
 										{#each paddleDetails[review.id].userReviews as userReview}
-											<div class="bg-gray-50 p-4 rounded-lg">
-												<div class="flex items-center justify-between mb-2">
-													<span class="font-semibold">{userReview.user}</span>
+											<div class="bg-gray-50 p-3 sm:p-4 rounded-lg">
+												<div class="flex items-center justify-between mb-2 flex-wrap gap-2">
+													<span class="font-semibold text-sm sm:text-base">{userReview.user}</span>
 													<RatingStars rating={userReview.rating} size="sm" showValue={false} />
 												</div>
-												<p class="text-sm text-gray-600 mb-2">{userReview.review}</p>
+												<p class="text-xs sm:text-sm text-gray-600 mb-2">{userReview.review}</p>
 												<span class="text-xs text-gray-500">{new Date(userReview.date).toLocaleDateString()}</span>
 											</div>
 										{/each}
 									</div>
 
 									<!-- Specifications Sidebar -->
-									<div class="mt-6">
-										<h5 class="text-lg font-bold mb-4">Complete Specifications</h5>
+									<div class="mt-4 sm:mt-6">
+										<h5 class="text-base sm:text-lg font-bold mb-3 sm:mb-4">Complete Specifications</h5>
 										<SpecsTable specs={{
 											shape: review.shape,
 											weight: review.weight,
@@ -762,42 +764,42 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 </section>
 
 <!-- Guides Section -->
-<section id="guides" class="py-20 px-4 bg-gray-50">
+<section id="guides" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
 	<div class="container mx-auto max-w-6xl">
-		<div class="text-center mb-16">
-			<h2 class="text-5xl font-bold mb-6">Buyer's Guides</h2>
-			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+		<div class="text-center mb-8 sm:mb-12 lg:mb-16">
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Buyer's Guides</h2>
+			<p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-2">
 				Comprehensive guides to help you make informed decisions about Padel equipment, from choosing your first paddle to advanced techniques.
 			</p>
 		</div>
 
 		<!-- Best Paddles for Beginners Guide -->
-		<div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
-			<div class="flex items-center gap-4 mb-6">
-				<div class="badge badge-primary badge-lg">Beginner Guide</div>
-				<span class="text-sm text-gray-500">5 min read</span>
+		<div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg mb-8 sm:mb-12">
+			<div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-4 sm:mb-6">
+				<div class="badge badge-primary badge-md sm:badge-lg">Beginner Guide</div>
+				<span class="text-xs sm:text-sm text-gray-500">5 min read</span>
 			</div>
-			<h3 class="text-4xl font-bold mb-6">Best Padel Paddles for Beginners</h3>
-			<p class="text-lg text-gray-600 mb-8">{guides[0].excerpt}</p>
+			<h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">Best Padel Paddles for Beginners</h3>
+			<p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8">{guides[0].excerpt}</p>
 
-			<div class="prose prose-lg max-w-none">
-				<h4 class="text-2xl font-bold mb-4">Key Factors for Beginners</h4>
-				<h5 class="text-xl font-semibold mb-2">Comfort and Control</h5>
-				<p class="mb-4">Beginner paddles should prioritize comfort and control over power. Look for paddles with soft EVA foam and balanced weight distribution.</p>
+			<div class="prose prose-sm sm:prose-lg max-w-none">
+				<h4 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Key Factors for Beginners</h4>
+				<h5 class="text-lg sm:text-xl font-semibold mb-2">Comfort and Control</h5>
+				<p class="text-sm sm:text-base mb-3 sm:mb-4">Beginner paddles should prioritize comfort and control over power. Look for paddles with soft EVA foam and balanced weight distribution.</p>
 
-				<h5 class="text-xl font-semibold mb-2">Budget-Friendly Options</h5>
-				<p class="mb-4">Don't invest in premium paddles until you're sure you'll stick with the sport. Start with paddles in the $100-200 range.</p>
+				<h5 class="text-lg sm:text-xl font-semibold mb-2">Budget-Friendly Options</h5>
+				<p class="text-sm sm:text-base mb-3 sm:mb-4">Don't invest in premium paddles until you're sure you'll stick with the sport. Start with paddles in the $100-200 range.</p>
 
-				<h5 class="text-xl font-semibold mb-2">Weight and Balance</h5>
-				<p class="mb-6">Lighter paddles (350-370g) with balanced or handle-heavy balance are easier for beginners to control.</p>
+				<h5 class="text-lg sm:text-xl font-semibold mb-2">Weight and Balance</h5>
+				<p class="text-sm sm:text-base mb-4 sm:mb-6">Lighter paddles (350-370g) with balanced or handle-heavy balance are easier for beginners to control.</p>
 
-				<h4 class="text-2xl font-bold mb-4">Recommended Beginner Paddles</h4>
+				<h4 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Recommended Beginner Paddles</h4>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
 					<div class="card bg-base-100 border border-base-200">
-						<div class="card-body">
-							<h5 class="card-title text-xl">Nox AT10 Luxury</h5>
-							<div class="space-y-2 text-sm">
+						<div class="card-body p-4 sm:p-6">
+							<h5 class="card-title text-lg sm:text-xl">Nox AT10 Luxury</h5>
+							<div class="space-y-2 text-xs sm:text-sm">
 								<p><strong>Price:</strong> $149</p>
 								<p><strong>Weight:</strong> 365g</p>
 								<p><strong>Shape:</strong> Round</p>
@@ -807,9 +809,9 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 					</div>
 
 					<div class="card bg-base-100 border border-base-200">
-						<div class="card-body">
-							<h5 class="card-title text-xl">Bullpadel Hack 04 Comfort</h5>
-							<div class="space-y-2 text-sm">
+						<div class="card-body p-4 sm:p-6">
+							<h5 class="card-title text-lg sm:text-xl">Bullpadel Hack 04 Comfort</h5>
+							<div class="space-y-2 text-xs sm:text-sm">
 								<p><strong>Price:</strong> $179</p>
 								<p><strong>Weight:</strong> 360g</p>
 								<p><strong>Shape:</strong> Teardrop</p>
@@ -832,18 +834,18 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 		</div>
 
 		<!-- Paddle Shapes Guide -->
-		<div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
-			<div class="flex items-center gap-4 mb-6">
-				<div class="badge badge-secondary badge-lg">Shapes Guide</div>
-				<span class="text-sm text-gray-500">4 min read</span>
+		<div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg mb-8 sm:mb-12">
+			<div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-4 sm:mb-6">
+				<div class="badge badge-secondary badge-md sm:badge-lg">Shapes Guide</div>
+				<span class="text-xs sm:text-sm text-gray-500">4 min read</span>
 			</div>
-			<h3 class="text-4xl font-bold mb-6">Padel Paddle Shapes Explained</h3>
-			<p class="text-lg text-gray-600 mb-8">{guides[1].excerpt}</p>
+			<h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">Padel Paddle Shapes Explained</h3>
+			<p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8">{guides[1].excerpt}</p>
 
-			<div class="prose prose-lg max-w-none">
-				<h4 class="text-2xl font-bold mb-6">The Three Main Shapes</h4>
+			<div class="prose prose-sm sm:prose-lg max-w-none">
+				<h4 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">The Three Main Shapes</h4>
 
-				<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
 					<div class="card bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200">
 						<div class="card-body text-center">
 							<div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -954,7 +956,7 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 		</div>
 
 		<!-- Quick Tips Section -->
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 			<div class="card bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
 				<div class="card-body text-center">
 					<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -989,20 +991,20 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 </section>
 
 <!-- Comparison Section -->
-<section id="compare" class="py-20 px-4 bg-base-100">
+<section id="compare" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-base-100">
 	<div class="container mx-auto max-w-6xl">
-		<div class="text-center mb-16">
-			<h2 class="text-5xl font-bold mb-6">Paddle Comparisons</h2>
-			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+		<div class="text-center mb-8 sm:mb-12 lg:mb-16">
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Paddle Comparisons</h2>
+			<p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-2">
 				Side-by-side comparisons to help you choose between similar paddles and find the best option for your playing style and budget.
 			</p>
 		</div>
 
 		<!-- Featured Comparison -->
-		<div class="card bg-base-100 shadow-2xl mb-12">
-			<div class="card-body">
-				<h3 class="card-title text-3xl mb-6">Nox ML10 Pro Carbon vs Bullpadel Vertex 04</h3>
-				<p class="text-lg mb-6">Compare two premium paddles with different playing characteristics - control-focused vs power-focused.</p>
+		<div class="card bg-base-100 shadow-2xl mb-8 sm:mb-12 overflow-x-auto">
+			<div class="card-body p-4 sm:p-6">
+				<h3 class="card-title text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6">Nox ML10 Pro Carbon vs Bullpadel Vertex 04</h3>
+				<p class="text-sm sm:text-base lg:text-lg mb-4 sm:mb-6">Compare two premium paddles with different playing characteristics - control-focused vs power-focused.</p>
 				<ComparisonTable
 					paddles={sampleReviews.slice(0, 2)}
 					columns={['name', 'price', 'rating', 'shape', 'weight', 'material', 'affiliate']}
@@ -1011,83 +1013,83 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 		</div>
 
 		<!-- Comparison Tips -->
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-			<div class="text-center">
-				<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-					<span class="text-2xl font-bold text-primary-content">🎯</span>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+			<div class="text-center p-4">
+				<div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+					<span class="text-xl sm:text-2xl font-bold text-primary-content">🎯</span>
 				</div>
-				<h4 class="text-xl font-bold mb-2">Know Your Style</h4>
-				<p class="text-gray-600">Determine if you're a control player, power player, or somewhere in between.</p>
+				<h4 class="text-lg sm:text-xl font-bold mb-2">Know Your Style</h4>
+				<p class="text-sm sm:text-base text-gray-600">Determine if you're a control player, power player, or somewhere in between.</p>
 			</div>
-			<div class="text-center">
-				<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-					<span class="text-2xl font-bold text-secondary-content">⚖️</span>
+			<div class="text-center p-4">
+				<div class="w-12 h-12 sm:w-16 sm:h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+					<span class="text-xl sm:text-2xl font-bold text-secondary-content">⚖️</span>
 				</div>
-				<h4 class="text-xl font-bold mb-2">Consider Your Level</h4>
-				<p class="text-gray-600">Beginner paddles prioritize comfort, while advanced paddles maximize performance.</p>
+				<h4 class="text-lg sm:text-xl font-bold mb-2">Consider Your Level</h4>
+				<p class="text-sm sm:text-base text-gray-600">Beginner paddles prioritize comfort, while advanced paddles maximize performance.</p>
 			</div>
-			<div class="text-center">
-				<div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-					<span class="text-2xl font-bold text-accent-content">💰</span>
+			<div class="text-center p-4">
+				<div class="w-12 h-12 sm:w-16 sm:h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+					<span class="text-xl sm:text-2xl font-bold text-accent-content">💰</span>
 				</div>
-				<h4 class="text-xl font-bold mb-2">Set Your Budget</h4>
-				<p class="text-gray-600">Quality paddles range from $100-$400+. Find the best value for your price range.</p>
+				<h4 class="text-lg sm:text-xl font-bold mb-2">Set Your Budget</h4>
+				<p class="text-sm sm:text-base text-gray-600">Quality paddles range from $100-$400+. Find the best value for your price range.</p>
 			</div>
 		</div>
 	</div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="py-20 px-4 bg-gradient-to-r from-neutral to-base-200 text-neutral-content">
+<section id="about" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-neutral to-base-200 text-neutral-content">
 	<div class="container mx-auto max-w-6xl">
-		<div class="text-center mb-16">
-			<h2 class="text-5xl font-bold mb-6">About Padel Reviews</h2>
-			<p class="text-xl opacity-90 max-w-3xl mx-auto">
+		<div class="text-center mb-8 sm:mb-12 lg:mb-16">
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">About Padel Reviews</h2>
+			<p class="text-base sm:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto px-2">
 				Your trusted source for honest, comprehensive Padel equipment reviews and expert guidance.
 			</p>
 		</div>
 
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
 			<div>
-				<h3 class="text-3xl font-bold mb-6">Our Mission</h3>
-				<p class="text-lg mb-6">
+				<h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Mission</h3>
+				<p class="text-base sm:text-lg mb-4 sm:mb-6">
 					To provide Padel players with honest, comprehensive reviews and expert guidance to help them choose the best equipment for their game.
 				</p>
 
-				<div class="space-y-4">
-					<div class="flex items-start gap-4">
-						<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+				<div class="space-y-3 sm:space-y-4">
+					<div class="flex items-start gap-3 sm:gap-4">
+						<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
 							<span class="text-sm font-bold">✓</span>
 						</div>
 						<div>
-							<h4 class="font-bold">Independent & Unbiased</h4>
-							<p class="opacity-80">Our recommendations are based solely on product quality and performance.</p>
+							<h4 class="font-bold text-sm sm:text-base">Independent & Unbiased</h4>
+							<p class="opacity-80 text-xs sm:text-sm">Our recommendations are based solely on product quality and performance.</p>
 						</div>
 					</div>
-					<div class="flex items-start gap-4">
-						<div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+					<div class="flex items-start gap-3 sm:gap-4">
+						<div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
 							<span class="text-sm font-bold">✓</span>
 						</div>
 						<div>
-							<h4 class="font-bold">Data-Driven Insights</h4>
-							<p class="opacity-80">We combine detailed testing with user feedback for comprehensive analysis.</p>
+							<h4 class="font-bold text-sm sm:text-base">Data-Driven Insights</h4>
+							<p class="opacity-80 text-xs sm:text-sm">We combine detailed testing with user feedback for comprehensive analysis.</p>
 						</div>
 					</div>
-					<div class="flex items-start gap-4">
-						<div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+					<div class="flex items-start gap-3 sm:gap-4">
+						<div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
 							<span class="text-sm font-bold">✓</span>
 						</div>
 						<div>
-							<h4 class="font-bold">Regular Updates</h4>
-							<p class="opacity-80">New paddles and equipment are regularly reviewed and added to our database.</p>
+							<h4 class="font-bold text-sm sm:text-base">Regular Updates</h4>
+							<p class="opacity-80 text-xs sm:text-sm">New paddles and equipment are regularly reviewed and added to our database.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div>
-				<h3 class="text-3xl font-bold mb-6">Get In Touch</h3>
-				<div class="bg-base-100 rounded-2xl p-8 text-base-content">
+				<h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Get In Touch</h3>
+				<div class="bg-base-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-base-content">
 					<ContactForm onSuccess={() => console.log('Message sent!')} />
 				</div>
 			</div>
@@ -1096,10 +1098,10 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 </section>
 
 <!-- Newsletter & Footer -->
-<section class="py-20 px-4 bg-neutral text-neutral-content">
+<section class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-neutral text-neutral-content">
 	<div class="container mx-auto max-w-4xl text-center">
-		<h2 class="text-4xl font-bold mb-6">Stay Updated</h2>
-		<p class="text-xl mb-8 opacity-90">
+		<h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Stay Updated</h2>
+		<p class="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 px-2">
 			Get the latest Padel reviews, equipment guides, and expert tips delivered to your inbox.
 		</p>
 		<NewsletterForm
@@ -1108,8 +1110,8 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 			description=""
 		/>
 
-		<div class="mt-12 pt-8 border-t border-neutral-content border-opacity-20">
-			<p class="text-sm opacity-70">
+		<div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-neutral-content border-opacity-20">
+			<p class="text-xs sm:text-sm opacity-70 px-2">
 				© 2026 Padel Reviews. Your trusted source for Padel equipment guidance.
 			</p>
 		</div>
