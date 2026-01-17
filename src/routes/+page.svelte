@@ -29,8 +29,8 @@
 			pros: ['Excellent control', 'Great for intermediate players', 'Durable construction'],
 			cons: ['Higher price point', 'May lack power for some players'],
 			affiliateLinks: {
-				padelusa: 'https://padelusa.com/nox-ml10-pro-carbon',
-				amazon: 'https://amazon.com/dp/B08N1Q8Q9Z'
+				padelusa: 'https://padelusa.com/products/nox-ml10-quantum-3k-miguel-lampertis-padel-racket',
+				amazon: 'https://www.amazon.com/Lamperti-Photochromic-Smartstrap-Technology-Advanced/dp/B0DHSYHXM3'
 			},
 			image: '/images/paddles/nox-ml10-pro-carbon-front.webp',
 			images: ['/images/paddles/nox-ml10-pro-carbon-front.webp'],
@@ -39,11 +39,11 @@
 			excerpt: 'The Nox ML10 Pro Carbon offers exceptional control and comfort for intermediate players.'
 		},
 		{
-			id: 'bullpadel-vertex-03',
-			title: 'Bullpadel Vertex 03 Paddle Review',
-			slug: 'bullpadel-vertex-03',
+			id: 'bullpadel-vertex-04',
+			title: 'Bullpadel Vertex 04 Paddle Review',
+			slug: 'bullpadel-vertex-04',
 			brand: 'Bullpadel',
-			model: 'Vertex 03',
+			model: 'Vertex 04',
 			shape: 'diamond',
 			weight: 370,
 			balance: 'head-heavy',
@@ -52,18 +52,18 @@
 			powerRating: 5,
 			controlRating: 4,
 			comfortRating: 4,
-			price: 299.99,
+			price: 199.99,
 			pros: ['Excellent power', 'Professional level performance', 'Premium materials'],
 			cons: ['Expensive', 'Requires advanced technique', 'Less forgiving'],
 			affiliateLinks: {
-				padelusa: 'https://padelusa.com/bullpadel-vertex-03',
-				amazon: 'https://amazon.com/dp/B08N1Q8Q9Z'
+				padelusa: 'https://phttps://padelusa.com/products/bullpadel-vertex-04-comfort-2025?variant=45395217055907',
+				amazon: 'https://www.amazon.com/BULLPADEL-Professional-Curvaktiv-Technology-MultiEva/dp/B0F1DV38H2'
 			},
 			image: '/images/paddles/bullpadel-vertex-03-front.webp',
 			images: ['/images/paddles/bullpadel-vertex-03-front.webp'],
 			content: '',
 			publishedAt: new Date('2024-01-20'),
-			excerpt: 'The Bullpadel Vertex 03 delivers maximum power for competitive players.'
+			excerpt: 'The Bullpadel Vertex 04 delivers maximum power for competitive players.'
 		},
 		{
 			id: 'adidas-metalbone-carbon',
@@ -83,8 +83,8 @@
 			pros: ['Great comfort', 'Balanced performance', 'Affordable premium paddle'],
 			cons: ['Less power than diamond shapes', 'May feel slow to some players'],
 			affiliateLinks: {
-				padelusa: 'https://padelusa.com/adidas-metalbone-carbon',
-				amazon: 'https://amazon.com/dp/B08N1Q8Q9Z'
+				padelusa: 'https://padelusa.com/products/adidas-metalbone-carbon-ctrl-3-4-padel-racket',
+				amazon: 'https://www.amazon.com/Adidas-Metalbone-Carbon-Padel-Racket/dp/B0DMD7VHH7'
 			},
 			image: '/images/paddles/adidas-metalbone-carbon.webp',
 			images: ['/images/paddles/adidas-metalbone-carbon.webp'],
@@ -106,12 +106,12 @@
 			powerRating: 3,
 			controlRating: 4,
 			comfortRating: 5,
-			price: 149.99,
+			price: 249.99,
 			pros: ['Excellent comfort', 'Perfect for beginners', 'Very forgiving'],
 			cons: ['Less power', 'Entry-level materials'],
 			affiliateLinks: {
-				padelusa: 'https://padelusa.com/nox-at10-luxury',
-				amazon: 'https://amazon.com/dp/B08EXAMPLE1'
+				padelusa: 'https://padelusa.com/products/nox-at10-luxury-genius-18k-alum-2025-by-agustin-tapia-padel-racket',
+				amazon: 'https://www.amazon.com/Agustin-Diamond-Exclusive-Technology-Aluminized/dp/B0DHT12YC4'
 			},
 			image: '/images/paddles/nox-at10-luxury-front.webp',
 			images: ['/images/paddles/nox-at10-luxury-front.webp'],
@@ -120,11 +120,11 @@
 			excerpt: 'The Nox AT10 Luxury is perfect for beginners seeking comfort and ease of use.'
 		},
 		{
-			id: 'bullpadel-hack-03-comfort',
-			title: 'Bullpadel Hack 03 Comfort Paddle Review',
-			slug: 'bullpadel-hack-03-comfort',
+			id: 'bullpadel-hack-04-comfort',
+			title: 'Bullpadel Hack 04 Comfort Paddle Review',
+			slug: 'bullpadel-hack-04-comfort',
 			brand: 'Bullpadel',
-			model: 'Hack 03 Comfort',
+			model: 'Hack 04 Comfort',
 			shape: 'teardrop',
 			weight: 360,
 			balance: 'balanced',
@@ -133,45 +133,18 @@
 			powerRating: 4,
 			controlRating: 4,
 			comfortRating: 5,
-			price: 179.99,
+			price: 279.99,
 			pros: ['Great comfort', 'Good power for beginners', 'Easy to use'],
 			cons: ['Entry-level construction', 'Less durable than premium models'],
 			affiliateLinks: {
-				padelusa: 'https://padelusa.com/bullpadel-hack-03-comfort',
-				amazon: 'https://amazon.com/dp/B08EXAMPLE2'
+				padelusa: 'https://padelusa.com/products/bullpadel-hack-04-comfort-2026-padel-racket',
+				amazon: 'https://www.amazon.com/BULLPADEL-Professional-TriCarbon-Aerodynamics-Stability/dp/B0DHZJJT3S'
 			},
 			image: '/images/paddles/bullpadel-hack-03-comfort-front.webp',
 			images: ['/images/paddles/bullpadel-hack-03-comfort-front.webp'],
 			content: '',
 			publishedAt: new Date('2024-01-18'),
-			excerpt: 'The Bullpadel Hack 03 Comfort offers excellent comfort with some power for developing players.'
-		},
-		{
-			id: 'adidas-drive-response',
-			title: 'Adidas Drive Response Paddle Review',
-			slug: 'adidas-drive-response',
-			brand: 'Adidas',
-			model: 'Drive Response',
-			shape: 'round',
-			weight: 355,
-			balance: 'balanced',
-			material: 'Fiberglass',
-			evaFoamType: 'Medium EVA',
-			powerRating: 3,
-			controlRating: 4,
-			comfortRating: 4,
-			price: 129.99,
-			pros: ['Very affordable', 'Good for beginners', 'Comfortable'],
-			cons: ['Basic materials', 'Limited performance'],
-			affiliateLinks: {
-				padelusa: 'https://padelusa.com/adidas-drive-response',
-				amazon: 'https://amazon.com/dp/B08EXAMPLE3'
-			},
-			image: '/images/paddles/adidas-drive-response-front.webp',
-			images: ['/images/paddles/adidas-drive-response-front.webp'],
-			content: '',
-			publishedAt: new Date('2024-01-10'),
-			excerpt: 'The Adidas Drive Response is an affordable entry-level paddle perfect for beginners.'
+			excerpt: 'The Bullpadel Hack 04 Comfort offers excellent comfort with some power for developing players.'
 		}
 	];
 
@@ -215,10 +188,10 @@ Perfect for players who want to dictate the pace of the game through precise sho
 				}
 			]
 		},
-		'bullpadel-vertex-03': {
-			fullDescription: `The Bullpadel Vertex 03 is a professional-grade power paddle designed for competitive players who demand maximum performance. This diamond-shaped weapon features TriCarbon technology and X5 core for explosive power and spin.
+		'bullpadel-vertex-04': {
+			fullDescription: `The Bullpadel Vertex 04 is a professional-grade power paddle designed for competitive players who demand maximum performance. This diamond-shaped weapon features TriCarbon technology and X5 core for explosive power and spin.
 
-The Vertex 03 is built for players who want to dominate rallies with powerful shots and aggressive play. The diamond shape concentrates power in the sweet spot, while the carbon fiber construction provides the stiffness needed for competitive play.
+The Vertex 04 is built for players who want to dominate rallies with powerful shots and aggressive play. The diamond shape concentrates power in the sweet spot, while the carbon fiber construction provides the stiffness needed for competitive play.
 
 Ideal for tournament players and those who want to take their game to the next level with raw power and precision.`,
 			keyFeatures: [
@@ -329,10 +302,10 @@ Perfect for players who want to focus on learning the game without being overwhe
 				}
 			]
 		},
-		'bullpadel-hack-03-comfort': {
-			fullDescription: `The Bullpadel Hack 03 Comfort bridges the gap between beginner and intermediate paddles. This teardrop-shaped paddle offers a good balance of comfort and power, making it ideal for players who have mastered the basics and want to add some pace to their game.
+		'bullpadel-hack-04-comfort': {
+			fullDescription: `The Bullpadel Hack 04 Comfort bridges the gap between beginner and intermediate paddles. This teardrop-shaped paddle offers a good balance of comfort and power, making it ideal for players who have mastered the basics and want to add some pace to their game.
 
-Featuring soft EVA foam and fiberglass construction, the Hack 03 provides excellent comfort while delivering enough power to satisfy developing players. The teardrop shape offers a slightly extended sweet spot compared to round paddles, rewarding better technique while still being forgiving enough for regular players.
+Featuring soft EVA foam and fiberglass construction, the Hack 04 provides excellent comfort while delivering enough power to satisfy developing players. The teardrop shape offers a slightly extended sweet spot compared to round paddles, rewarding better technique while still being forgiving enough for regular players.
 
 An excellent choice for players transitioning from complete beginners to intermediate level.`,
 			keyFeatures: [
@@ -366,44 +339,6 @@ An excellent choice for players transitioning from complete beginners to interme
 					review: 'Great comfort and decent power. Helps me develop my technique while staying comfortable during long sessions.'
 				}
 			]
-		},
-		'adidas-drive-response': {
-			fullDescription: `The Adidas Drive Response is the most affordable entry point into Padel. This budget-friendly paddle is designed for complete beginners who want to try the sport without a significant financial commitment.
-
-Despite its low price point, the Drive Response doesn't skimp on comfort. The medium-density EVA foam provides good shock absorption, while the fiberglass construction ensures durability. The round shape maximizes forgiveness, making it easier for new players to succeed.
-
-Perfect for casual players, those testing the waters of Padel, or as a backup paddle for more experienced players.`,
-			keyFeatures: [
-				'Budget-friendly pricing',
-				'Medium EVA foam for comfort',
-				'Round shape for maximum forgiveness',
-				'Fiberglass construction',
-				'Lightweight design',
-				'Basic but functional'
-			],
-			playingStyle: 'Casual beginners on a budget',
-			skillLevel: 'Beginner',
-			performanceData: {
-				power: 3,
-				control: 4,
-				comfort: 4,
-				durability: 3,
-				value: 5
-			},
-			userReviews: [
-				{
-					rating: 4,
-					user: 'Pablo G.',
-					date: '2024-01-10',
-					review: 'Great budget paddle! Perfect for trying out Padel without spending a fortune. Comfortable and forgiving.'
-				},
-				{
-					rating: 3,
-					user: 'Elena V.',
-					date: '2024-01-05',
-					review: 'Decent for the price. Good for beginners, but expect to upgrade as you improve.'
-				}
-			]
 		}
 	};
 
@@ -434,7 +369,7 @@ Lighter paddles (350-370g) with balanced or handle-heavy balance are easier for 
 - **Shape**: Round
 - **Best For**: Complete beginners
 
-### 2. Bullpadel Hack 03 Comfort
+### 2. Bullpadel Hack 04 Comfort
 - **Price**: $179
 - **Weight**: 360g
 - **Shape**: Teardrop
@@ -873,7 +808,7 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 
 					<div class="card bg-base-100 border border-base-200">
 						<div class="card-body">
-							<h5 class="card-title text-xl">Bullpadel Hack 03 Comfort</h5>
+							<h5 class="card-title text-xl">Bullpadel Hack 04 Comfort</h5>
 							<div class="space-y-2 text-sm">
 								<p><strong>Price:</strong> $179</p>
 								<p><strong>Weight:</strong> 360g</p>
@@ -1066,7 +1001,7 @@ Your paddle shape should match your playing style and skill level. Don't be afra
 		<!-- Featured Comparison -->
 		<div class="card bg-base-100 shadow-2xl mb-12">
 			<div class="card-body">
-				<h3 class="card-title text-3xl mb-6">Nox ML10 Pro Carbon vs Bullpadel Vertex 03</h3>
+				<h3 class="card-title text-3xl mb-6">Nox ML10 Pro Carbon vs Bullpadel Vertex 04</h3>
 				<p class="text-lg mb-6">Compare two premium paddles with different playing characteristics - control-focused vs power-focused.</p>
 				<ComparisonTable
 					paddles={sampleReviews.slice(0, 2)}
