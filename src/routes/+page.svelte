@@ -56,7 +56,7 @@
 			pros: ['Excellent power', 'Professional level performance', 'Premium materials'],
 			cons: ['Expensive', 'Requires advanced technique', 'Less forgiving'],
 			affiliateLinks: {
-				padelusa: 'https://phttps://padelusa.com/products/bullpadel-vertex-04-comfort-2025?variant=45395217055907',
+				padelusa: 'https://padelusa.com/products/bullpadel-vertex-04-comfort-2025?variant=45395217055907',
 				amazon: 'https://www.amazon.com/BULLPADEL-Professional-Curvaktiv-Technology-MultiEva/dp/B0F1DV38H2'
 			},
 			image: '/images/paddles/bullpadel-vertex-03-front.webp',
